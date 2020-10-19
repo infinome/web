@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+// import logo from "./logo.svg";
+// import "./App.css";
+import { BackgroundImageComponent } from "./components/layout";
+import { InfinomeLogo } from "./components/infinome-logo";
 import {
   ElementPositions,
   useScrollPosition
 } from "./hooks/use-scroll-position";
+import { ViewRouter } from "./views/view-router";
 
 function App() {
   const [hideOnScroll, setHideOnScroll] = useState(true);
-  // const rendersCount = useRef(0)
 
   useScrollPosition(
     ({ previousPosition, currentPosition }: ElementPositions) => {
@@ -19,23 +21,11 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React and
-        </a>
-      </header>
-      <div style={{ height: "50rem" }}>{"hideOnScroll: " + hideOnScroll}</div>
-    </div>
+    // <BackgroundImageComponent className="App">
+    //   <InfinomeLogo />
+    //   <div style={{ height: "50rem" }}>{"hideOnScroll: " + hideOnScroll}</div>
+    // </BackgroundImageComponent>
+    <ViewRouter />
   );
 }
 

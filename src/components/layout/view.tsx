@@ -18,7 +18,7 @@ export const View: FC<IView> = ({
 }) => {
   return (
     <AppComponent>
-      <BackgroundColumnLeft />
+      {/* <BackgroundColumnLeft /> */}
       <Header breadcrumbTrail={breadcrumbTrail} sectionTitle={sectionTitle} />
       <Content contentTitle={contentTitle}>{children}</Content>
     </AppComponent>
@@ -32,7 +32,7 @@ export const PanelView: FC<IPanelView> = ({
 }) => {
   return (
     <AppComponent>
-      <BackgroundColumnLeft />
+      {/* <BackgroundColumnLeft /> */}
       <Header breadcrumbTrail={breadcrumbTrail} sectionTitle={sectionTitle} />
       <ContentWrapper panelCount={panels.length}>
         {panels.map((panel: IContentPanel, index) => (

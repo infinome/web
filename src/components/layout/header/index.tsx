@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { Breadcrumb, IBreadcrumb } from "./breadcrumb";
-import { BurnminuteLogoTitle } from "./logo-title";
+// import { BurnminuteLogoTitle } from "./logo-title";
+import { InfinomeLogo } from "../../infinome-logo";
 import { NavMenu } from "./nav-menu";
 import { Link } from "react-router-dom";
 
@@ -113,7 +114,7 @@ export const Header: FC<IHeader> = ({ breadcrumbTrail, sectionTitle }) => {
     <ContentHeaderWrapper>
       <TopHeaderWrapper>
         <LogoLink to="/">
-          <BurnminuteLogoTitle />
+          <InfinomeLogo />
         </LogoLink>
         {/* <UserInfoWrapper>{UserContent}</UserInfoWrapper> */}
       </TopHeaderWrapper>

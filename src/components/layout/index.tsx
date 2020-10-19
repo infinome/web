@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "../../config/styles";
+import mountains from "../../assets/images/boulder-mountains-blur.png";
 
 export { PanelView, View } from "./view";
 export {
@@ -16,11 +17,31 @@ export {
   DetailsTextWrapper
 } from "./details";
 
+export const BackgroundImageComponent = styled.div`
+  background: url(${mountains});
+  background-color: rgba(157, 181, 203, 1);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position-x: 25%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 1rem 1rem 2rem 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+
 export const AppComponent = styled.div`
-  background: linear-gradient(217deg, #2b3134, rgba(31, 32, 33, 0.1) 70.71%),
-    linear-gradient(336deg, #354147, rgba(76, 77, 78, 0.3) 70.71%),
-    linear-gradient(127deg, rgba(22, 25, 28, 0.8), #2b3134 70.71%);
-  background-color: ${Colors.DEEP_BLUE_GRAY};
+  background: linear-gradient(
+    217deg,
+    rgba(194, 225, 254, 1),
+    rgba(255, 255, 255, 0) 70.71%
+  );
+  background-color: rgba(157, 181, 203, 1);
   bottom: 0;
   display: flex;
   flex-direction: column;
