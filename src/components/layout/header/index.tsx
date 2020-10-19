@@ -117,11 +117,12 @@ export const Header: FC<IHeader> = ({ breadcrumbTrail, sectionTitle }) => {
           <InfinomeLogo />
         </LogoLink>
         {/* <UserInfoWrapper>{UserContent}</UserInfoWrapper> */}
+        <NavMenu currentTitle={sectionTitle} />
       </TopHeaderWrapper>
-      <SubHeaderWrapper>
+      {/* <SubHeaderWrapper>
         <Breadcrumb breadcrumbTrail={breadcrumbTrail} />
         <NavMenu currentTitle={sectionTitle} />
-      </SubHeaderWrapper>
+      </SubHeaderWrapper> */}
     </ContentHeaderWrapper>
   );
 };

@@ -2,18 +2,19 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ILinkElement } from "../../../config/definitions";
+import { INavMenu, NAVIGATION_ELEMENTS } from "../../../config/navigation";
 // import { NavMenuToggleIcon } from "../../icons/nav-menu-toggle";
 
-const defaultNavMenuItems: ILinkElement[] = [
-  { label: "Activity", path: "/exercises" },
-  { label: "Plan", path: "/exercises" },
-  { label: "Feed", path: "#" }
-];
+// const defaultNavMenuItems: ILinkElement[] = [
+//   { label: "Activity", path: "/exercises" },
+//   { label: "Plan", path: "/exercises" },
+//   { label: "Feed", path: "#" }
+// ];
 
-export interface INavMenu {
-  navMenuItems?: ILinkElement[];
-  currentTitle?: string;
-}
+// export interface INavMenu {
+//   navMenuItems?: ILinkElement[];
+//   currentTitle?: string;
+// }
 
 const NavTitleWrapper = styled.div`
   display: flex;
@@ -23,10 +24,10 @@ const NavTitleWrapper = styled.div`
 
 const NavMenuWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   overflow: hidden;
   z-index: 100;
-  position: absolute;
+  position: relative;
   right: 1.4rem;
   top: 6.25rem;
   width: 11.5rem;
@@ -98,11 +99,18 @@ export const NavMenu: FC<INavMenu> = ({ navMenuItems = [], currentTitle }) => {
   };
   return (
     <NavMenuWrapper>
-      <NavTitleWrapper onClick={handleMenuToggle}>
+      {(navMenuItems || []).map(({ label, path }, index) => {
+        return (
+          <NavMenuLink to={path} key={index} title={label}>
+            <NavMenuItem onClick={handleMenuToggle}>{label}</NavMenuItem>
+          </NavMenuLink>
+        );
+      })}
+      {/* <NavTitleWrapper onClick={handleMenuToggle}>
         <SectionTitle>{currentTitle}</SectionTitle>
-        {/* <IconWrapper title="Navigation Menu">
+        <IconWrapper title="Navigation Menu">
 					<NavMenuToggleIcon />
-				</IconWrapper> */}
+				</IconWrapper>
       </NavTitleWrapper>
       {menuVisibility && (
         <MenuItemWrapper
@@ -118,12 +126,12 @@ export const NavMenu: FC<INavMenu> = ({ navMenuItems = [], currentTitle }) => {
             );
           })}
         </MenuItemWrapper>
-      )}
+      )} */}
     </NavMenuWrapper>
   );
 };
 
 NavMenu.defaultProps = {
-  navMenuItems: defaultNavMenuItems,
+  navMenuItems: NAVIGATION_ELEMENTS,
   currentTitle: "home"
 };
