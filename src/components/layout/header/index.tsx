@@ -5,6 +5,7 @@ import { Breadcrumb, IBreadcrumb } from "./breadcrumb";
 import { InfinomeLogo } from "../../infinome-logo";
 import { NavMenu } from "./nav-menu";
 import { Link } from "react-router-dom";
+import { Colors } from "../../../config/styles";
 
 export interface IHeader extends IBreadcrumb {
   sectionTitle?: string;
@@ -13,11 +14,12 @@ export interface IHeader extends IBreadcrumb {
 export const ContentHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 8.5rem;
-  background-color: transparent;
-  background-image: url("./images/burnminute-logo-title.png");
+  /* height: 8.5rem; */
+  background-color: ${Colors.WHITE_87};
+  backg
+  /* background-image: url("./images/burnminute-logo-title.png"); */
   background-repeat: no-repeat;
-  padding: 0.4rem;
+  padding: 1rem;
   z-index: 1;
 `;
 
@@ -26,7 +28,7 @@ export const ContentHeaderWrapper = styled.div`
 //   display: flex;
 //   flex-direction: column;
 //   color: rgba(255, 255, 255, 0.75);
-//   font-family: Oxygen, sans-serif;
+//   font-family: ${Fonts.BARLOW_CONDENSED};
 //   font-size: 0.75rem;
 //   justify-content: start;
 //   text-align: center;
@@ -46,7 +48,7 @@ export const ContentHeaderWrapper = styled.div`
 //   min-height: 3rem;
 //   height: 3rem;
 //   color: rgba(255, 255, 255, 0.75);
-//   font-family: Oxygen, sans-serif;
+//   font-family: ${Fonts.BARLOW_CONDENSED};
 //   font-size: 0.75rem;
 //   justify-content: center;
 //   text-align: center;
@@ -63,13 +65,13 @@ export const ContentHeaderWrapper = styled.div`
 //   height: 2.75rem;
 // `;
 
-const SubHeaderWrapper = styled.div`
-  padding: 0.5rem 0rem 0rem 0rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  overflow: hidden;
-`;
+// const SubHeaderWrapper = styled.div`
+//   padding: 0.5rem 0rem 0rem 0rem;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   overflow: hidden;
+// `;
 
 const TopHeaderWrapper = styled.div`
   display: flex;

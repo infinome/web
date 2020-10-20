@@ -8,6 +8,7 @@ import {
   useScrollPosition
 } from "./hooks/use-scroll-position";
 import { ViewRouter } from "./views/view-router";
+import { GlobalStyle } from "./config/styles";
 
 function App() {
   const [hideOnScroll, setHideOnScroll] = useState(true);
@@ -21,11 +22,13 @@ function App() {
   );
 
   return (
-    // <BackgroundImageComponent className="App">
     //   <InfinomeLogo />
     //   <div style={{ height: "50rem" }}>{"hideOnScroll: " + hideOnScroll}</div>
-    // </BackgroundImageComponent>
-    <ViewRouter />
+    // <GlobalStyle>
+    <BackgroundImageComponent>
+      <ViewRouter />
+    </BackgroundImageComponent>
+    // </GlobalStyle>
   );
 }
 
