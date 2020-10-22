@@ -4,6 +4,7 @@ import { Header, IHeader } from "./header";
 import { IBreadcrumb } from "./header/breadcrumb";
 import { Content, ContentPanel, ContentWrapper } from "./content";
 import { IContent, IContentPanel } from "../../config//definitions";
+import { InfinomeLogoIcon } from "../infinome-logo-icon";
 
 export interface IView extends IHeader, IBreadcrumb, IContent {}
 export interface IPanelView extends IView {

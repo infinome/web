@@ -1,17 +1,29 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
-// import { Home } from "./list";
-// import { HomePreview } from "../exercise-details/preview";
-import { PanelView, View } from "../../components/layout/view";
-// import { IContentPanel, IHome, ILinkElement } from "../../config/definitions";
-
-export const EXERCISE_BG_HIGHLIGHT_COLOR: string = "rgba(243, 253, 253, 0.57)";
-// const breadcrumb: ILinkElement[] = [{ label: "Home", path: "/" }];
-
-// export interface IHomeViewProps {
-//   selectedId?: string;
-// }
+import {
+  DetailsTextHighlightWrapper,
+  DetailsTextWrapper,
+  View
+} from "../../components/layout";
 
 export const HomeView: FC = () => {
-  return <View contentTitle="Home">{"Home you are!"}</View>;
+  return (
+    <View contentTitle="Harnessing the Infinite Potential of the Genome">
+      <DetailsTextHighlightWrapper>
+        {"If the Natural World allows it, evolution can achieve it."}
+      </DetailsTextHighlightWrapper>
+      <DetailsTextWrapper>
+        <p>
+          {
+            "At Infinome Bio, we harness the awesome power of evolution to develop and deliver biological solutions to many of the world’s most important problems."
+          }
+        </p>
+        <p>
+          {
+            "From health and medicine, to agriculture and consumer products, Infinome Bio is here to define and lead the realization of opportunities of critical impact for society and the planet in the Bioeconomy in the coming decade and beyond."
+          }
+        </p>
+      </DetailsTextWrapper>
+    </View>
+  );
 };

@@ -2,6 +2,8 @@ import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { IContent, IContentPanel } from "../../config//definitions";
 import { Colors, Fonts } from "../../config//styles";
+import { Link } from "react-router-dom";
+import { InfinomeLogoIcon } from "../infinome-logo-icon";
 
 export interface IContentWrapperProps {
   panelCount?: number;
@@ -16,12 +18,9 @@ export const CenteredContentWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled("div")<IContentWrapperProps>`
-  border: 0.125rem solid rgba(255, 255, 255, 0.87);
-  border-radius: 0px 0px 0.75rem 0.75rem;
   display: flex;
   flex-direction: ${(props) => (props.panelCount ? "row" : "column")};
   overflow: hidden;
-  margin: -4rem 0.4rem 0.4rem 0.4rem;
   z-index: 0;
   height: 100%;
 `;
@@ -29,16 +28,15 @@ export const ContentWrapper = styled("div")<IContentWrapperProps>`
 export const ContentPanelWrapper = styled("div")<IContentPanel>`
   background: linear-gradient(
       188.79deg,
-      rgba(241, 252, 248, 0.5) 12.88%,
+      rgba(241, 252, 248, 0.25) 12.88%,
       rgba(255, 255, 255, 0) 88.9%
     ),
     ${(props) =>
-      props.background ? props.background : "rgba(255, 255, 255, 0.74);"};
+      props.background ? props.background : "rgba(255, 255, 255, 0.14);"};
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  width: ${(props) => (props.pctWidth ? props.pctWidth : "100")}%;
   height: 100%;
+  margin: 7rem 0 0 0;
 `;
 
 export interface IContentTitleProps {
@@ -46,22 +44,41 @@ export interface IContentTitleProps {
 }
 
 export const ContentTitle = styled("div")<IContentTitleProps>`
-  font-family: ${Fonts.BARLOW};
-  font-weight: 700;
-  font-size: 1.75rem;
-  padding: 0.75rem 1.75rem 0rem 1.5rem;
+  font-family: ${Fonts.BARLOW_CONDENSED};
+  font-weight: 900;
+  font-size: 4rem;
+  margin-top: -2rem;
+  padding: 0 4rem 2rem 4rem;
   height: 2.5rem;
-  background-color: rgba(251, 253, 255, 0.37);
-  color: ${(props) => (props.color ? `${props.color}` : Colors.DARK_BLUE)};
+  line-height: 4rem;
+  z-index: 11;
+  color: ${(props) => (props.color ? `${props.color}` : Colors.TITLE_BLUE)};
 `;
 
 export const ContentBody = styled.div`
   display: flex;
-  flex-direction: row;
-  padding: 0.5rem;
-  overflow: hidden;
-  justify-content: center;
+  background-color: rgba(251, 253, 255, 0.87);
+  flex-direction: column;
+  padding: 3rem 7.5rem;
+  overflow: auto hidden;
   height: 100%;
+  margin-bottom: 0.75rem;
+  font-family: ${Fonts.SOURCE_SERIF_PRO};
+  font-size: 1.15rem;
+  line-height: 1.5rem;
+`;
+
+export const ContentFooter = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-family: ${Fonts.BARLOW_CONDENSED};
+  color: ${Colors.INFINOME_RED};
+  padding: 1rem 2.5rem;
+`;
+
+const FooterLogoLink = styled(Link)`
+  margin-left: 1rem;
 `;
 
 export const ContentPanel: FC<IContentPanel> = ({
@@ -93,6 +110,12 @@ export const Content: FC<IContent> = ({ children, contentTitle }) => {
       <ContentPanel contentTitle={contentTitle}>
         <>{children}</>
       </ContentPanel>
+      <ContentFooter>
+        &copy; 2020 Infinome Biosciences
+        <FooterLogoLink to="/">
+          <InfinomeLogoIcon />
+        </FooterLogoLink>
+      </ContentFooter>
     </ContentWrapper>
   );
 };

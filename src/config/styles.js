@@ -10,9 +10,10 @@ export const Colors = {
   BLUE: "#14219C",
   TURQUOISE: "rgba(0, 126, 154, 1)",
   DARK_BLUE: "rgba(3, 33, 39, 1)",
-  TITLE_BLUE: "rgba(40, 0, 155, 1)",
+  TITLE_BLUE: "rgba(23, 3, 87, 1)",
   WHITE: "rgba(255,255,255,1)",
-  WHITE_87: "rgba(255,255,255,0.87)"
+  WHITE_87: "rgba(255,255,255,0.87)",
+  INFINOME_RED: "rgba(153,1,2,1)"
 };
 
 /**

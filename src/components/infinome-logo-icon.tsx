@@ -1,7 +1,11 @@
 import React, { FC } from "react";
 import { IDimensions } from "../config/definitions";
 
-export const InfinomeLogo: FC<IDimensions> = ({ width, height, ...rest }) => {
+export const InfinomeLogoIcon: FC<IDimensions> = ({
+  width,
+  height,
+  ...rest
+}) => {
   return (
     <svg
       width="30"

@@ -26,8 +26,7 @@ const NavTitleWrapper = styled.div`
 const NavMenuWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  overflow: hidden;
-  padding-top: 1rem;
+  padding: 1.45rem 1rem 0 0;
   z-index: 1;
 `;
 

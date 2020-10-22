@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../config/styles";
-import mountains from "../../assets/images/boulder-mountains-blur.png";
+import mountains from "../../assets/images/boulder-mountains.png";
+import { Link } from "react-router-dom";
 
 export { PanelView, View } from "./view";
 export {
@@ -14,6 +15,7 @@ export {
   DetailsFooterWrapper,
   DetailsHeaderWrapper,
   DetailsBodyWrapper,
+  DetailsTextHighlightWrapper,
   DetailsTextWrapper
 } from "./details";
 
@@ -38,19 +40,11 @@ export const BackgroundImageComponent = styled.div`
 
 export const AppComponent = styled.div`
   background: linear-gradient(
-      220.68deg,
-      rgba(255, 255, 255, 0.99) 20.51%,
-      rgba(255, 255, 255, 0.3267) 74.12%
-    ),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02));
-
-  /* background: linear-gradient(
-    217deg,
-    rgba(194, 225, 254, 1),
-    rgba(255, 255, 255, 0) 70.71%
+    220.68deg,
+    rgba(255, 255, 255, 0.99) 4.51%,
+    rgba(255, 255, 255, 0.3267) 17.12%
   );
-  background-color: rgba(157, 181, 203, 1); */
-  bottom: 4rem;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   left: 0;
@@ -70,4 +64,9 @@ export const BackgroundColumnLeft = styled.div`
   bottom: 1rem;
   background: rgba(25, 26, 28, 0.37);
   border-radius: 1rem 0px 0px 1rem;
+`;
+
+export const LogoLink = styled(Link)`
+  width: fit-content;
+  z-index: 17;
 `;
