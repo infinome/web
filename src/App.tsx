@@ -19,11 +19,12 @@ function App() {
   );
 
   return (
-    // <GlobalStyle>
-    <BackgroundImageComponent>
-      <ViewRouter />
-    </BackgroundImageComponent>
-    // </GlobalStyle>
+    <>
+      <GlobalStyle />
+      <BackgroundImageComponent>
+        <ViewRouter />
+      </BackgroundImageComponent>
+    </>
   );
 }
 

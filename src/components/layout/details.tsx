@@ -64,7 +64,9 @@ export const DetailsTextWrapper = styled.div<any>`
 `;
 
 export const DetailsTextWrapperRow = styled(DetailsTextWrapper)`
+  background-color: rgba(254, 253, 255, 0.47);
   flex-direction: row;
+  margin: 0 0 3rem 0;
 `;
 
 export const DetailsTextHighlightWrapper = styled(DetailsTextWrapper)`

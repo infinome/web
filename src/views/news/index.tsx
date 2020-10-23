@@ -7,6 +7,25 @@ import {
   DetailsTextWrapperRow,
   View
 } from "../../components/layout";
+import Thumbnail_RapidGenome from "../../assets/images/thumbnail-rapid-genome-scale-engineering.png";
+import Thumbnail_RapidForward from "../../assets/images/thumbnail-rapid-forward-engineering.png";
+import Thumbnail_SynBioBeta from "../../assets/images/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.png";
+import Thumbnail_GenomeScale from "../../assets/images/thumbnail-genome-scale-mapping-of-genotype.png";
+import Thumbnail_BenchtopPlatform from "../../assets/images/thumbnail-a-benchtop-platform-for-massively.png";
+
+const NewsImage = styled.img`
+  border: none;
+  width: 14rem;
+  height: auto;
+  margin-right: 1rem;
+  outline-style: none;
+  &:hover {
+    outline-style: solid;
+    outline-width: 0.125rem;
+    outline-color: ${Colors.TURQUOISE_67};
+    outline-offset: 0.0625rem;
+  }
+`;
 
 const NewsLink = styled.a`
   border: none;
@@ -31,8 +50,9 @@ export const NewsView: FC = () => {
           title="Rapid Forward Engineering at the Genome Scale, SEED 2019"
           target="_blank"
         >
-          Rapid Forward Engineering at the Genome Scale, SEED 2019
+          <NewsImage src={Thumbnail_RapidForward} />
         </NewsLink>
+        Rapid Forward Engineering at the Genome Scale, SEED 2019
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
         <BulletIcon />
@@ -41,9 +61,10 @@ export const NewsView: FC = () => {
           title="SynBioBeta Webinar: Precision editing for genome scale directed evolution"
           target="_blank"
         >
-          SynBioBeta Webinar: Precision editing for genome scale directed
-          evolution
+          <NewsImage src={Thumbnail_SynBioBeta} />
         </NewsLink>
+        SynBioBeta Webinar: Precision editing for genome scale directed
+        evolution (video)
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
         <BulletIcon />
@@ -52,8 +73,9 @@ export const NewsView: FC = () => {
           title="Rapid Genome Scale Engineering by Richard Fox, Inscripta"
           target="_blank"
         >
-          Rapid Genome Scale Engineering by Richard Fox, Inscripta
+          <NewsImage src={Thumbnail_RapidGenome} />
         </NewsLink>
+        Rapid Genome Scale Engineering by Richard Fox, Inscripta (video)
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
         <BulletIcon />
@@ -62,9 +84,10 @@ export const NewsView: FC = () => {
           title="Genome Scale Mapping of Genotype to Phenotype Relationships by Richard Fox, Inscripta"
           target="_blank"
         >
-          Genome Scale Mapping of Genotype to Phenotype Relationships by Richard
-          Fox, Inscripta
+          <NewsImage src={Thumbnail_GenomeScale} />
         </NewsLink>
+        Genome Scale Mapping of Genotype to Phenotype Relationships by Richard
+        Fox, Inscripta (video)
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
         <BulletIcon />
@@ -73,9 +96,10 @@ export const NewsView: FC = () => {
           title="A benchtop platform for massively parallel CRISPR-based microbial genome engineering"
           target="_blank"
         >
-          A benchtop platform for massively parallel CRISPR-based microbial
-          genome engineering
+          <NewsImage src={Thumbnail_BenchtopPlatform} />
         </NewsLink>
+        A benchtop platform for massively parallel CRISPR-based microbial genome
+        engineering (video)
       </DetailsTextWrapperRow>
     </View>
   );

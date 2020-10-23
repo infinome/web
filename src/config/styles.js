@@ -9,6 +9,7 @@ export const Colors = {
   PALE_GREEN: "rgba(190, 204, 184, 1)",
   BLUE: "#14219C",
   TURQUOISE: "rgba(0, 126, 154, 1)",
+  TURQUOISE_67: "rgba(0, 126, 154, 0.67)",
   DARK_BLUE: "rgba(3, 33, 39, 1)",
   TITLE_BLUE: "rgba(23, 3, 87, 1)",
   WHITE: "rgba(255,255,255,1)",

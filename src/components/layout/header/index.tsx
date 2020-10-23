@@ -21,8 +21,10 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   background-color: ${Colors.WHITE_87};
   background-repeat: no-repeat;
-  padding: 1rem 0 0 2rem;
+  padding: 0.75rem 0 0 2rem;
   height: 3.75rem;
+  margin-top: 0.25rem;
+  /* border-top: 0.25rem solid ${Colors.TITLE_BLUE}; */
 `;
 
 export const Header: FC<IHeader> = ({ breadcrumbTrail, sectionTitle }) => {

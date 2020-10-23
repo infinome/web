@@ -17,7 +17,7 @@ export const BulletIcon: FC<IDimensions> = ({ width, height, ...rest }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M16 0H0V16L16 0Z" fill={Colors.PALE_GREEN} />
+        <path d="M8 0H0V8H8V0Z" fill={Colors.TURQUOISE_67} />
       </svg>
     </IconWrapper>
   );
