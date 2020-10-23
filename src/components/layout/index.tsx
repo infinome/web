@@ -16,7 +16,8 @@ export {
   DetailsHeaderWrapper,
   DetailsBodyWrapper,
   DetailsTextHighlightWrapper,
-  DetailsTextWrapper
+  DetailsTextWrapper,
+  DetailsTextWrapperRow
 } from "./details";
 
 export const BackgroundImageComponent = styled.div`

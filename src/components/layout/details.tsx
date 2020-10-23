@@ -50,7 +50,7 @@ export const DetailsBodyWrapper = styled(DetailsContentWrapper)`
   width: 100%;
 `;
 
-export const DetailsTextWrapper = styled.div`
+export const DetailsTextWrapper = styled.div<any>`
   background-color: rgba(254, 253, 255, 0.67);
   border-top: 0.5rem solid ${Colors.WHITE_87};
   display: flex;
@@ -61,6 +61,10 @@ export const DetailsTextWrapper = styled.div`
   line-height: 2.5rem;
   padding: 0.5rem 4rem;
   text-overflow: ellipsis;
+`;
+
+export const DetailsTextWrapperRow = styled(DetailsTextWrapper)`
+  flex-direction: row;
 `;
 
 export const DetailsTextHighlightWrapper = styled(DetailsTextWrapper)`

@@ -32,9 +32,10 @@ export const ContentPanelWrapper = styled("div")<IContentPanel>`
       rgba(255, 255, 255, 0) 88.9%
     ),
     ${(props) =>
-      props.background ? props.background : "rgba(255, 255, 255, 0.14);"};
+      props.background ? props.background : "rgba(255, 255, 255, 0.27);"};
   display: flex;
   flex-direction: column;
+  max-height: calc(100% - 11rem);
   height: 100%;
   margin: 7rem 0 0 0;
 `;
