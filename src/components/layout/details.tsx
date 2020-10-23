@@ -52,7 +52,6 @@ export const DetailsBodyWrapper = styled(DetailsContentWrapper)`
 
 export const DetailsTextWrapper = styled.div`
   background-color: rgba(254, 253, 255, 0.67);
-  border-bottom: 0.5rem solid ${Colors.WHITE_87};
   border-top: 0.5rem solid ${Colors.WHITE_87};
   display: flex;
   flex-direction: column;
@@ -69,6 +68,6 @@ export const DetailsTextHighlightWrapper = styled(DetailsTextWrapper)`
   border: none 0 transparent;
   color: ${Colors.TURQUOISE};
   font-family: ${Fonts.BARLOW};
-  font-size: 1.75rem;
+  font-size: 2rem;
   padding: 0.5rem 2rem 2rem 0;
 `;

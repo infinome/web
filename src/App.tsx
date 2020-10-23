@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-// import logo from "./logo.svg";
-// import "./App.css";
 import { BackgroundImageComponent } from "./components/layout";
-import { InfinomeLogo } from "./components/infinome-logo";
 import {
   ElementPositions,
   useScrollPosition
@@ -22,8 +19,6 @@ function App() {
   );
 
   return (
-    //   <InfinomeLogo />
-    //   <div style={{ height: "50rem" }}>{"hideOnScroll: " + hideOnScroll}</div>
     // <GlobalStyle>
     <BackgroundImageComponent>
       <ViewRouter />

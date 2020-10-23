@@ -15,7 +15,7 @@ export const HomeView: FC = () => {
       <DetailsTextWrapper>
         <p>
           {
-            "At Infinome Bio, we harness the awesome power of evolution to develop and deliver biological solutions to many of the world’s most important problems."
+            "At Infinome Biosciences, we harness the awesome power of evolution to develop and deliver biological solutions to many of the world’s most important problems."
           }
         </p>
         <p>

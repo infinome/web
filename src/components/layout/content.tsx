@@ -44,23 +44,24 @@ export interface IContentTitleProps {
 }
 
 export const ContentTitle = styled("div")<IContentTitleProps>`
-  font-family: ${Fonts.BARLOW_CONDENSED};
-  font-weight: 900;
-  font-size: 4rem;
-  margin-top: -2rem;
-  padding: 0 4rem 2rem 4rem;
-  height: 2.5rem;
-  line-height: 4rem;
-  z-index: 11;
   color: ${(props) => (props.color ? `${props.color}` : Colors.TITLE_BLUE)};
+  font-family: ${Fonts.BARLOW_CONDENSED};
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 4rem;
+  margin-top: -2rem;
+  padding: 0 4rem 0 6rem;
+  text-shadow: 0 0.05rem 0 ${Colors.WHITE_87};
+  z-index: 11;
 `;
 
 export const ContentBody = styled.div`
   display: flex;
   background-color: rgba(251, 253, 255, 0.87);
   flex-direction: column;
-  padding: 3rem 7.5rem;
-  overflow: auto hidden;
+  padding: 4rem 7.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100%;
   margin-bottom: 0.75rem;
   font-family: ${Fonts.SOURCE_SERIF_PRO};
