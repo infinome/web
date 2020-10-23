@@ -20,9 +20,9 @@ const NewsLink = styled.a`
 
 export const NewsView: FC = () => {
   return (
-    <View contentTitle="News">
+    <View contentTitle="News and Media">
       <DetailsTextHighlightWrapper>
-        {"Articles and links from our team and the larger industry"}
+        {"Talks and presentations by members of our Founding Team"}
       </DetailsTextHighlightWrapper>
       <DetailsTextWrapperRow>
         <BulletIcon />

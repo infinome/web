@@ -29,7 +29,7 @@ export const Header: FC<IHeader> = ({ breadcrumbTrail, sectionTitle }) => {
   return (
     <HeaderWrapperOuter>
       <HeaderWrapper>
-        <LogoLink to="/">
+        <LogoLink to="/" title="Infinome Home">
           <InfinomeLogo />
         </LogoLink>
         <NavMenu currentTitle={sectionTitle} />

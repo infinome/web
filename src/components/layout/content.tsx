@@ -35,7 +35,7 @@ export const ContentPanelWrapper = styled("div")<IContentPanel>`
       props.background ? props.background : "rgba(255, 255, 255, 0.27);"};
   display: flex;
   flex-direction: column;
-  max-height: calc(100% - 11rem);
+  max-height: calc(100% - 7rem);
   height: 100%;
   margin: 7rem 0 0 0;
 `;
@@ -70,19 +70,6 @@ export const ContentBody = styled.div`
   line-height: 1.5rem;
 `;
 
-export const ContentFooter = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  font-family: ${Fonts.BARLOW_CONDENSED};
-  color: ${Colors.INFINOME_RED};
-  padding: 1rem 2.5rem;
-`;
-
-const FooterLogoLink = styled(Link)`
-  margin-left: 1rem;
-`;
-
 export const ContentPanel: FC<IContentPanel> = ({
   background,
   children,
@@ -112,12 +99,6 @@ export const Content: FC<IContent> = ({ children, contentTitle }) => {
       <ContentPanel contentTitle={contentTitle}>
         <>{children}</>
       </ContentPanel>
-      <ContentFooter>
-        &copy; 2020 Infinome Biosciences
-        <FooterLogoLink to="/">
-          <InfinomeLogoIcon />
-        </FooterLogoLink>
-      </ContentFooter>
     </ContentWrapper>
   );
 };

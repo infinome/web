@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { AppComponent, BackgroundColumnLeft } from "./";
 import { Header, IHeader } from "./header";
+import { Footer } from "./footer";
 import { IBreadcrumb } from "./header/breadcrumb";
 import { Content, ContentPanel, ContentWrapper } from "./content";
 import { IContent, IContentPanel } from "../../config//definitions";
-import { InfinomeLogoIcon } from "../infinome-logo-icon";
 
 export interface IView extends IHeader, IBreadcrumb, IContent {}
 export interface IPanelView extends IView {
@@ -22,6 +22,7 @@ export const View: FC<IView> = ({
       {/* <BackgroundColumnLeft /> */}
       <Header breadcrumbTrail={breadcrumbTrail} sectionTitle={sectionTitle} />
       <Content contentTitle={contentTitle}>{children}</Content>
+      <Footer />
     </AppComponent>
   );
 };
@@ -47,6 +48,7 @@ export const PanelView: FC<IPanelView> = ({
           </ContentPanel>
         ))}
       </ContentWrapper>
+      <Footer />
     </AppComponent>
   );
 };
