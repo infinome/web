@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.js": "/static/js/main.3245939f.chunk.js",
-    "main.js.map": "/static/js/main.3245939f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.58c8fb25.js",
-    "runtime-main.js.map": "/static/js/runtime-main.58c8fb25.js.map",
-    "static/js/2.6b57b692.chunk.js": "/static/js/2.6b57b692.chunk.js",
-    "static/js/2.6b57b692.chunk.js.map": "/static/js/2.6b57b692.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6012ccd4d0319bff564b91950800e2be.js": "/precache-manifest.6012ccd4d0319bff564b91950800e2be.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.6b57b692.chunk.js.LICENSE.txt": "/static/js/2.6b57b692.chunk.js.LICENSE.txt",
-    "static/media/Team-Andrew.png": "/static/media/Team-Andrew.a837d23c.png",
-    "static/media/Team-Dan.png": "/static/media/Team-Dan.09ecb362.png",
-    "static/media/Team-Mike.png": "/static/media/Team-Mike.a618560e.png",
-    "static/media/Team-Richard.png": "/static/media/Team-Richard.ed6aab2a.png",
-    "static/media/boulder-mountains.png": "/static/media/boulder-mountains.5f2d4c00.png",
-    "static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.png": "/static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.facf82bb.png",
-    "static/media/thumbnail-a-benchtop-platform-for-massively.png": "/static/media/thumbnail-a-benchtop-platform-for-massively.2134a709.png",
-    "static/media/thumbnail-genome-scale-mapping-of-genotype.png": "/static/media/thumbnail-genome-scale-mapping-of-genotype.ed9d743c.png",
-    "static/media/thumbnail-rapid-forward-engineering.png": "/static/media/thumbnail-rapid-forward-engineering.04d3dfbf.png",
-    "static/media/thumbnail-rapid-genome-scale-engineering.png": "/static/media/thumbnail-rapid-genome-scale-engineering.5bbf1f65.png"
+    "main.js": "/web/static/js/main.095d9b65.chunk.js",
+    "main.js.map": "/web/static/js/main.095d9b65.chunk.js.map",
+    "runtime-main.js": "/web/static/js/runtime-main.516b8fea.js",
+    "runtime-main.js.map": "/web/static/js/runtime-main.516b8fea.js.map",
+    "static/js/2.dc76eff6.chunk.js": "/web/static/js/2.dc76eff6.chunk.js",
+    "static/js/2.dc76eff6.chunk.js.map": "/web/static/js/2.dc76eff6.chunk.js.map",
+    "index.html": "/web/index.html",
+    "precache-manifest.371199ee8ea5a893265697ad41168e35.js": "/web/precache-manifest.371199ee8ea5a893265697ad41168e35.js",
+    "service-worker.js": "/web/service-worker.js",
+    "static/js/2.dc76eff6.chunk.js.LICENSE.txt": "/web/static/js/2.dc76eff6.chunk.js.LICENSE.txt",
+    "static/media/Team-Andrew.png": "/web/static/media/Team-Andrew.a837d23c.png",
+    "static/media/Team-Dan.png": "/web/static/media/Team-Dan.09ecb362.png",
+    "static/media/Team-Mike.png": "/web/static/media/Team-Mike.a618560e.png",
+    "static/media/Team-Richard.png": "/web/static/media/Team-Richard.ed6aab2a.png",
+    "static/media/boulder-mountains.png": "/web/static/media/boulder-mountains.5f2d4c00.png",
+    "static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.png": "/web/static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.facf82bb.png",
+    "static/media/thumbnail-a-benchtop-platform-for-massively.png": "/web/static/media/thumbnail-a-benchtop-platform-for-massively.2134a709.png",
+    "static/media/thumbnail-genome-scale-mapping-of-genotype.png": "/web/static/media/thumbnail-genome-scale-mapping-of-genotype.ed9d743c.png",
+    "static/media/thumbnail-rapid-forward-engineering.png": "/web/static/media/thumbnail-rapid-forward-engineering.04d3dfbf.png",
+    "static/media/thumbnail-rapid-genome-scale-engineering.png": "/web/static/media/thumbnail-rapid-genome-scale-engineering.5bbf1f65.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.58c8fb25.js",
-    "static/js/2.6b57b692.chunk.js",
-    "static/js/main.3245939f.chunk.js"
+    "static/js/runtime-main.516b8fea.js",
+    "static/js/2.dc76eff6.chunk.js",
+    "static/js/main.095d9b65.chunk.js"
   ]
 }
