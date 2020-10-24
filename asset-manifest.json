@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.js": "/web/static/js/main.5cf30309.chunk.js",
-    "main.js.map": "/web/static/js/main.5cf30309.chunk.js.map",
-    "runtime-main.js": "/web/static/js/runtime-main.516b8fea.js",
-    "runtime-main.js.map": "/web/static/js/runtime-main.516b8fea.js.map",
-    "static/js/2.6a5e0dc2.chunk.js": "/web/static/js/2.6a5e0dc2.chunk.js",
-    "static/js/2.6a5e0dc2.chunk.js.map": "/web/static/js/2.6a5e0dc2.chunk.js.map",
-    "index.html": "/web/index.html",
-    "precache-manifest.86a0149ab23bd6dbeabbf60c3a0d9a2f.js": "/web/precache-manifest.86a0149ab23bd6dbeabbf60c3a0d9a2f.js",
-    "service-worker.js": "/web/service-worker.js",
-    "static/js/2.6a5e0dc2.chunk.js.LICENSE.txt": "/web/static/js/2.6a5e0dc2.chunk.js.LICENSE.txt",
-    "static/media/Team-Andrew.png": "/web/static/media/Team-Andrew.a837d23c.png",
-    "static/media/Team-Dan.png": "/web/static/media/Team-Dan.09ecb362.png",
-    "static/media/Team-Mike.png": "/web/static/media/Team-Mike.a618560e.png",
-    "static/media/Team-Richard.png": "/web/static/media/Team-Richard.ed6aab2a.png",
-    "static/media/boulder-mountains.png": "/web/static/media/boulder-mountains.5f2d4c00.png",
-    "static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.png": "/web/static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.facf82bb.png",
-    "static/media/thumbnail-a-benchtop-platform-for-massively.png": "/web/static/media/thumbnail-a-benchtop-platform-for-massively.2134a709.png",
-    "static/media/thumbnail-genome-scale-mapping-of-genotype.png": "/web/static/media/thumbnail-genome-scale-mapping-of-genotype.ed9d743c.png",
-    "static/media/thumbnail-rapid-forward-engineering.png": "/web/static/media/thumbnail-rapid-forward-engineering.04d3dfbf.png",
-    "static/media/thumbnail-rapid-genome-scale-engineering.png": "/web/static/media/thumbnail-rapid-genome-scale-engineering.5bbf1f65.png"
+    "main.js": "/web/build/static/js/main.34f03f8e.chunk.js",
+    "main.js.map": "/web/build/static/js/main.34f03f8e.chunk.js.map",
+    "runtime-main.js": "/web/build/static/js/runtime-main.acab6a30.js",
+    "runtime-main.js.map": "/web/build/static/js/runtime-main.acab6a30.js.map",
+    "static/js/2.72d3a288.chunk.js": "/web/build/static/js/2.72d3a288.chunk.js",
+    "static/js/2.72d3a288.chunk.js.map": "/web/build/static/js/2.72d3a288.chunk.js.map",
+    "index.html": "/web/build/index.html",
+    "precache-manifest.1e31f0ba54ce09d9b04b2f0b9c6fa062.js": "/web/build/precache-manifest.1e31f0ba54ce09d9b04b2f0b9c6fa062.js",
+    "service-worker.js": "/web/build/service-worker.js",
+    "static/js/2.72d3a288.chunk.js.LICENSE.txt": "/web/build/static/js/2.72d3a288.chunk.js.LICENSE.txt",
+    "static/media/Team-Andrew.png": "/web/build/static/media/Team-Andrew.a837d23c.png",
+    "static/media/Team-Dan.png": "/web/build/static/media/Team-Dan.09ecb362.png",
+    "static/media/Team-Mike.png": "/web/build/static/media/Team-Mike.a618560e.png",
+    "static/media/Team-Richard.png": "/web/build/static/media/Team-Richard.ed6aab2a.png",
+    "static/media/boulder-mountains.png": "/web/build/static/media/boulder-mountains.5f2d4c00.png",
+    "static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.png": "/web/build/static/media/thumbnail-SynBioBeta-Inscripta-Webinar-Precision.facf82bb.png",
+    "static/media/thumbnail-a-benchtop-platform-for-massively.png": "/web/build/static/media/thumbnail-a-benchtop-platform-for-massively.2134a709.png",
+    "static/media/thumbnail-genome-scale-mapping-of-genotype.png": "/web/build/static/media/thumbnail-genome-scale-mapping-of-genotype.ed9d743c.png",
+    "static/media/thumbnail-rapid-forward-engineering.png": "/web/build/static/media/thumbnail-rapid-forward-engineering.04d3dfbf.png",
+    "static/media/thumbnail-rapid-genome-scale-engineering.png": "/web/build/static/media/thumbnail-rapid-genome-scale-engineering.5bbf1f65.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.516b8fea.js",
-    "static/js/2.6a5e0dc2.chunk.js",
-    "static/js/main.5cf30309.chunk.js"
+    "static/js/runtime-main.acab6a30.js",
+    "static/js/2.72d3a288.chunk.js",
+    "static/js/main.34f03f8e.chunk.js"
   ]
 }
