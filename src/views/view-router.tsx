@@ -9,10 +9,10 @@ export const ViewRouter = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route path="/" exact component={HomeView} />
         <Route path="/contact" exact component={ContactView} />
         <Route path="/news" exact component={NewsView} />
         <Route path="/team" exact component={TeamView} />
+        <Route path="/" exact component={HomeView} />
         <Route path="/*" component={HomeView} />
       </Switch>
     </Router>
