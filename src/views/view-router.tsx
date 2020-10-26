@@ -7,7 +7,7 @@ import { HomeView } from "./home";
 
 export const ViewRouter = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/" exact component={HomeView} />
         <Route path="/contact" exact component={ContactView} />
