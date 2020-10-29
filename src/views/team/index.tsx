@@ -65,6 +65,7 @@ const TeamList = styled.ul`
 const TeamListItem = styled.li`
   padding-left: 0.5rem;
   font-family: ${Fonts.SOURCE_SERIF_PRO};
+  font-size: 1rem;
 `;
 
 const TeamTitle = styled.div`
@@ -72,7 +73,7 @@ const TeamTitle = styled.div`
   border: none 0 transparent;
   color: ${Colors.BLACK_BLUE};
   font-family: ${Fonts.BARLOW_CONDENSED};
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 0.75rem 0 0.5rem 0;
 `;
@@ -81,7 +82,7 @@ const TeamSubTitle = styled(TeamTitle)`
   font-weight: normal;
   font-family: ${Fonts.BARLOW};
   color: ${Colors.DARK_BLUE};
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding-left: 1rem;
 `;
 

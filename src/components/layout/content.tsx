@@ -47,7 +47,7 @@ export interface IContentTitleProps {
 export const ContentTitle = styled("div")<IContentTitleProps>`
   color: ${(props) => (props.color ? `${props.color}` : Colors.TITLE_BLUE)};
   font-family: ${Fonts.BARLOW_CONDENSED};
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 900;
   line-height: 4rem;
   margin-top: -2rem;

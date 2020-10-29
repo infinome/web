@@ -8,19 +8,15 @@ import {
 
 export const HomeView: FC = () => {
   return (
-    <View contentTitle="Harnessing the Infinite Potential of the Genome">
-      <DetailsTextHighlightWrapper>
+    <View contentTitle="&nbsp;">
+      {/* <DetailsTextHighlightWrapper>
         {"If the Natural World allows it, evolution can achieve it."}
-      </DetailsTextHighlightWrapper>
+      </DetailsTextHighlightWrapper> */}
       <DetailsTextWrapper>
+        <p>{"Harnessing the infinite potential of the genome"}</p>
         <p>
           {
-            "At Infinome Biosciences, we harness the awesome power of evolution to develop and deliver biological solutions to many of the world’s most important problems."
-          }
-        </p>
-        <p>
-          {
-            "From health and medicine, to agriculture and consumer products, Infinome Bio is here to define and lead the realization of opportunities of critical impact for society and the planet in the Bioeconomy in the coming decade and beyond."
+            "Infinome Biosciences leverages state-of-the-art technologies including high-throughput CRISPR-based genome editing, machine learning/AI, directed evolution, smart automation & analytics, and lean integrated teams to usher in a new era of the bioeconomy and uniquely deliver high-value biological products to the market.            "
           }
         </p>
       </DetailsTextWrapper>

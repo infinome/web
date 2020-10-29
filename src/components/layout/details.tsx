@@ -56,7 +56,7 @@ export const DetailsTextWrapper = styled.div<any>`
   display: flex;
   flex-direction: column;
   font-family: ${Fonts.SOURCE_SERIF_PRO};
-  font-size: 1.25rem;
+  font-size: 1rem;
   justify-content: flex-start;
   line-height: 2.5rem;
   padding: 0.5rem 4rem;
@@ -74,6 +74,6 @@ export const DetailsTextHighlightWrapper = styled(DetailsTextWrapper)`
   border: none 0 transparent;
   color: ${Colors.TURQUOISE};
   font-family: ${Fonts.BARLOW};
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5rem 2rem 2rem 0;
 `;
