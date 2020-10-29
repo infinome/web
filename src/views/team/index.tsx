@@ -154,7 +154,7 @@ export const TeamView: FC = () => {
       <TeamContent>
         <TeamImage
           src={BioPhotoMike}
-          alt="Mike Clay, PhD - Chief Operations Officer"
+          alt="Mike Clay, PhD - Chief Operating Officer"
         />
         <TeamContentInner>
           <TeamTitle>Mike Clay, PhD</TeamTitle>
@@ -165,7 +165,8 @@ export const TeamView: FC = () => {
               Zymergen, Intrexon, & Inscripta
             </TeamListItem>
             <TeamListItem>
-              Commercialized 3 compounds, fully built 3 synthetic biology labs
+              Experienced in product commercialization and fully built 3
+              synthetic biology labs
             </TeamListItem>
             <TeamListItem>
               Deep professional network across Bay Area Biotech companies,
@@ -192,11 +193,11 @@ export const TeamView: FC = () => {
       <TeamContent>
         <TeamImage
           src={BioPhotoAndrew}
-          alt="Andrew Guest, PhD - Chief Synthetic Biology Officer"
+          alt="Andrew Guest, PhD - Chief Innovation Officer"
         />
         <TeamContentInner>
           <TeamTitle>Andrew Guest, PhD</TeamTitle>
-          <TeamSubTitle>Chief Synthetic Biology Officer</TeamSubTitle>
+          <TeamSubTitle>Chief Innovation Officer</TeamSubTitle>
           <TeamList>
             <TeamListItem>Co-founder of Inscripta</TeamListItem>
             <TeamListItem>
