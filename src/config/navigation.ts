@@ -1,12 +1,12 @@
-import { ILinkElement } from "./definitions";
+import { ILinkElement, IHomePageAware, Routes } from "./definitions";
 
 export const NAVIGATION_ELEMENTS: ILinkElement[] = [
-  { label: "News", path: "/news" },
-  { label: "Team", path: "/team" },
-  { label: "Contact", path: "/contact" }
+  { label: "News", path: Routes.NEWS },
+  { label: "Team", path: Routes.TEAM },
+  { label: "Contact", path: Routes.CONTACT }
 ];
 
-export interface INavMenu {
+export interface INavMenu extends IHomePageAware {
   navMenuItems?: ILinkElement[];
   currentTitle?: string;
 }

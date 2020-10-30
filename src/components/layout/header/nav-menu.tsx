@@ -1,9 +1,10 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ILinkElement } from "../../../config/definitions";
+import { ILinkElement, IHomePageAware } from "../../../config/definitions";
 import { Colors, Fonts } from "../../../config/styles";
 import { INavMenu, NAVIGATION_ELEMENTS } from "../../../config/navigation";
+
 // import { NavMenuToggleIcon } from "../../icons/nav-menu-toggle";
 
 // const defaultNavMenuItems: ILinkElement[] = [
@@ -23,10 +24,11 @@ const NavTitleWrapper = styled.div`
   justify-content: flex-end;
 `;
 
-const NavMenuWrapper = styled.div`
+const NavMenuWrapper = styled.div<IHomePageAware>`
   display: flex;
   flex-direction: row;
-  padding: 1.45rem 1rem 0 0;
+  padding: ${(props) => (props.isHome === true ? "1.45rem" : "0.25rem")} 1rem 0
+    0;
   z-index: 1;
 `;
 
@@ -59,9 +61,13 @@ const NavMenuItemDivider = styled("div")`
   font-size: 1.75rem;
 `;
 
-export const NavMenu: FC<INavMenu> = ({ navMenuItems = [], currentTitle }) => {
+export const NavMenu: FC<INavMenu> = ({
+  navMenuItems = [],
+  currentTitle,
+  isHome
+}) => {
   return (
-    <NavMenuWrapper>
+    <NavMenuWrapper isHome={isHome}>
       {(navMenuItems || []).map(({ label, path }, index) => {
         return (
           <>

@@ -1,6 +1,10 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-import { IContent, IContentPanel } from "../../config//definitions";
+import {
+  IContent,
+  IContentPanel,
+  IHomePageAware
+} from "../../config//definitions";
 import { Colors, Fonts } from "../../config//styles";
 import { Link } from "react-router-dom";
 import { InfinomeLogoIcon } from "../infinome-logo-icon";
@@ -35,9 +39,9 @@ export const ContentPanelWrapper = styled("div")<IContentPanel>`
       props.background ? props.background : "rgba(255, 255, 255, 0.27);"};
   display: flex;
   flex-direction: column;
-  max-height: calc(100% - 7rem);
+  max-height: calc(100% - 4rem);
   height: 100%;
-  margin: 7rem 0 0 0;
+  margin: 4rem 0 0 0;
 `;
 
 export interface IContentTitleProps {
@@ -49,18 +53,23 @@ export const ContentTitle = styled("div")<IContentTitleProps>`
   font-family: ${Fonts.BARLOW_CONDENSED};
   font-size: 2.5rem;
   font-weight: 900;
-  line-height: 4rem;
+  line-height: 3rem;
   margin-top: -2rem;
-  padding: 0 4rem 0 6rem;
+  padding: 0.5rem 4rem 0 6rem;
   text-shadow: 0 0.05rem 0 ${Colors.WHITE_87};
   z-index: 11;
 `;
 
-export const ContentBody = styled.div`
+export const ContentBody = styled.div<IHomePageAware>`
   display: flex;
-  background-color: rgba(251, 253, 255, 0.87);
+  background-color: rgba(
+    251,
+    253,
+    255,
+    ${(props) => (props.isHome ? "0.37" : "0.74")}
+  );
   flex-direction: column;
-  padding: 4rem 7.5rem;
+  padding: 4rem ${(props) => (props.isHome ? "2.5rem" : "7.5rem")};
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
@@ -74,6 +83,7 @@ export const ContentPanel: FC<IContentPanel> = ({
   background,
   children,
   contentTitle,
+  isHome,
   pctWidth
 }) => {
   const TitleElement: ReactNode = contentTitle ? (
@@ -88,15 +98,15 @@ export const ContentPanel: FC<IContentPanel> = ({
   return (
     <ContentPanelWrapper background={background} pctWidth={pctWidth}>
       {TitleElement}
-      <ContentBody>{children}</ContentBody>
+      <ContentBody isHome={isHome}>{children}</ContentBody>
     </ContentPanelWrapper>
   );
 };
 
-export const Content: FC<IContent> = ({ children, contentTitle }) => {
+export const Content: FC<IContent> = ({ children, contentTitle, isHome }) => {
   return (
     <ContentWrapper>
-      <ContentPanel contentTitle={contentTitle}>
+      <ContentPanel contentTitle={contentTitle} isHome={isHome}>
         <>{children}</>
       </ContentPanel>
     </ContentWrapper>

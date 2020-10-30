@@ -4,16 +4,18 @@ import { ContactView } from "./contact";
 import { NewsView } from "./news";
 import { TeamView } from "./team";
 import { HomeView } from "./home";
+import { Routes } from "../config/definitions";
 
 export const ViewRouter = () => {
+  const { CONTACT, NEWS, TEAM, HOME, DEFAULT } = Routes;
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route path="/contact" exact component={ContactView} />
-        <Route path="/news" exact component={NewsView} />
-        <Route path="/team" exact component={TeamView} />
-        <Route path="/" exact component={HomeView} />
-        <Route path="/*" component={HomeView} />
+        <Route path={CONTACT} exact component={ContactView} />
+        <Route path={NEWS} exact component={NewsView} />
+        <Route path={TEAM} exact component={TeamView} />
+        <Route path={HOME} exact component={HomeView} />
+        <Route path={DEFAULT} component={HomeView} />
       </Switch>
     </Router>
   );
