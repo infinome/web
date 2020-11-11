@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { AppComponent, BackgroundColumnLeft } from "./";
 import { Header, IHeader } from "./header";
@@ -17,7 +18,19 @@ export interface IPanelView extends IView {
   panels: IContent[];
 }
 
-export const View: FC<IView> = ({
+export interface IAnimatable {
+  animate?: boolean;
+}
+
+export const ScrollableViewContainer = styled.div<IAnimatable>`
+  transform: translateX(${({ animate }) => (animate ? "0" : "-100vw")});
+  transition: transform 1s;
+  height: 900px;
+  width: 300px;
+  background-color: orange;
+`;
+
+export const ScrollableView: FC<IView> = ({
   breadcrumbTrail,
   contentTitle,
   sectionTitle,
@@ -26,6 +39,32 @@ export const View: FC<IView> = ({
   const { pathname } = useLocation();
 
   const isHomePage = pathname === Routes.HOME;
+  return (
+    <ScrollableViewContainer>
+      {/* <BackgroundColumnLeft /> */}
+      <Header
+        breadcrumbTrail={breadcrumbTrail}
+        isHome={isHomePage}
+        sectionTitle={sectionTitle}
+      />
+      <Content contentTitle={contentTitle} isHome={isHomePage}>
+        {children}
+      </Content>
+      <Footer />
+    </ScrollableViewContainer>
+  );
+};
+
+export const View: FC<IView> = ({
+  breadcrumbTrail,
+  contentTitle,
+  sectionTitle,
+  children
+}) => {
+  // const { pathname } = useLocation();
+
+  // const isHomePage = pathname === Routes.HOME;
+  const isHomePage = true;
   return (
     <AppComponent>
       {/* <BackgroundColumnLeft /> */}

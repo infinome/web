@@ -1,6 +1,13 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import {
+  homeScrollPositionState,
+  newsScrollPositionState,
+  teamScrollPositionState,
+  contactScrollPositionState
+} from "../../../config/recoil-state";
 import { ILinkElement, IHomePageAware } from "../../../config/definitions";
 import { Colors, Fonts } from "../../../config/styles";
 import { INavMenu, NAVIGATION_ELEMENTS } from "../../../config/navigation";
@@ -27,17 +34,20 @@ const NavTitleWrapper = styled.div`
 const NavMenuWrapper = styled.div<IHomePageAware>`
   display: flex;
   flex-direction: row;
-  padding: ${(props) => (props.isHome === true ? "1.45rem" : "0.25rem")} 1rem 0
-    0;
+  transition: padding 0.3s;
+  padding: ${(props) =>
+    props.isHome !== false ? "1.45rem 1rem 0 0" : "1rem 1rem 0 0"};
   z-index: 1;
 `;
 
-const NavMenuLink = styled(Link)`
+// const NavMenuLink = styled(Link)`
+const NavMenuLink = styled.div<IHomePageAware>`
   text-decoration: none;
   user-select: none;
   color: ${Colors.TURQUOISE};
-  font-family: ${Fonts.BARLOW_CONDENSED};
-  font-size: 1.5rem;
+  /* font-family: ${Fonts.BARLOW_CONDENSED}; */
+  transition: font-size 0.3s;
+  font-size: ${({ isHome }) => (isHome !== false ? "1.5rem" : "1.25rem")};
   text-transform: uppercase;
   :hover {
     color: ${Colors.DARK_BLUE};
@@ -58,7 +68,7 @@ interface IRenderNavMenuProps {
 const NavMenuItemDivider = styled("div")`
   padding: 0 0.25rem;
   color: ${Colors.PALE_GREEN};
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 `;
 
 export const NavMenu: FC<INavMenu> = ({
@@ -66,12 +76,44 @@ export const NavMenu: FC<INavMenu> = ({
   currentTitle,
   isHome
 }) => {
+  const [section, setSection] = useState("home");
+
+  // useEffect(() => {
+  //   window.scrollTo(0,300)
+  // }, [section]);
+
+  const newsScrollPosition = useRecoilValue(newsScrollPositionState);
+  const teamScrollPosition = useRecoilValue(teamScrollPositionState);
+  const contactScrollPosition = useRecoilValue(contactScrollPositionState);
+
+  const handleNavClick = (section: string) => () => {
+    // window.scrollTo(0, 300);
+    switch (section) {
+      case "News":
+        window.scroll(0, newsScrollPosition);
+        break;
+      case "Team":
+        window.scroll(0, teamScrollPosition);
+        break;
+      case "Contact":
+        window.scroll(0, contactScrollPosition);
+        break;
+      default:
+    }
+  };
+
   return (
     <NavMenuWrapper isHome={isHome}>
       {(navMenuItems || []).map(({ label, path }, index) => {
         return (
           <>
-            <NavMenuLink to={path} key={index} title={label}>
+            {/* <NavMenuLink to={path} key={index} title={label}> */}
+            <NavMenuLink
+              key={index}
+              title={label}
+              isHome={isHome}
+              onClick={handleNavClick(label)}
+            >
               <NavMenuItem>{label}</NavMenuItem>
             </NavMenuLink>
             {index !== navMenuItems.length - 1 && (

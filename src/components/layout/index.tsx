@@ -3,7 +3,7 @@ import { Colors } from "../../config/styles";
 import mountains from "../../assets/images/boulder-mountains.png";
 import { Link } from "react-router-dom";
 
-export { PanelView, View } from "./view";
+export { PanelView, ScrollableViewContainer, View } from "./view";
 export {
   CenteredContentWrapper,
   Content,
@@ -67,7 +67,13 @@ export const BackgroundColumnLeft = styled.div`
   border-radius: 1rem 0px 0px 1rem;
 `;
 
-export const LogoLink = styled(Link)`
+// export const LogoLink = styled(Link)`
+export const LogoLink = styled("div")`
   width: fit-content;
   z-index: 17;
+`;
+
+export const ViewContainer = styled.div`
+  width: 100%;
+  min-height: 83vh;
 `;

@@ -19,23 +19,33 @@ const getScrollPosition = (
   // not a browser
   if (!isBrowser) return { x: 0, y: 0 };
   // using the window
-  if (useWindow) return { x: window.scrollX, y: window.scrollY };
+  if (useWindow !== false) {
+    // console.log("using window");
+    return {
+      x: window.scrollX + window.innerWidth,
+      y: window.scrollY + window.innerHeight
+    };
+  }
   // by element position
   const target = scrollElementRef?.current || document.body;
   const position = target.getBoundingClientRect();
-  return { x: position.left, y: position.top };
+  // const scrollPos = target.scrollY + target.contentHeight
+  // return { x: position.left, y: position.top };
+  return { x: position.right, y: position.bottom };
 };
 
+export type ScrollEffectCallback = (positions: ElementPositions) => void;
+
 export function useScrollPosition(
-  effectCallback: (positions: ElementPositions) => void,
+  effectCallback: ScrollEffectCallback,
+  delay?: number,
   deps?: any[],
   scrollElement?: MutableRefObject<HTMLElement>,
-  useWindow?: boolean,
-  wait?: number
+  useWindow?: boolean
 ) {
   const position = useRef(getScrollPosition(scrollElement, useWindow));
 
-  const scrollCallBack = useCallback(() => {
+  const scrollCallback = useCallback(() => {
     const currentPosition = getScrollPosition(scrollElement, useWindow);
     effectCallback({ previousPosition: position.current, currentPosition });
     position.current = currentPosition;
@@ -45,12 +55,12 @@ export function useScrollPosition(
     let throttleTimeout: number | null = null;
 
     const handleScroll = () => {
-      if (wait) {
+      if (delay) {
         if (throttleTimeout === null) {
-          throttleTimeout = setTimeout(scrollCallBack, wait);
+          throttleTimeout = setTimeout(scrollCallback, delay);
         }
       } else {
-        scrollCallBack();
+        scrollCallback();
         throttleTimeout = null;
       }
     };
@@ -58,5 +68,5 @@ export function useScrollPosition(
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [deps, scrollCallBack, wait]);
+  }, [deps, scrollCallback, delay]);
 }

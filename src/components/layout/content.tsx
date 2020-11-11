@@ -74,7 +74,7 @@ export const ContentBody = styled.div<IHomePageAware>`
   overflow-y: auto;
   height: 100%;
   margin-bottom: 0.75rem;
-  font-family: ${Fonts.SOURCE_SERIF_PRO};
+  /* font-family: ${Fonts.SOURCE_SERIF_PRO}; */
   font-size: 1.15rem;
   line-height: 1.5rem;
 `;

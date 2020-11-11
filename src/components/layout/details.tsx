@@ -40,7 +40,7 @@ export const DetailsHeaderWrapper = styled(DetailsFooterWrapper)`
 export const DetailsBodyWrapper = styled(DetailsContentWrapper)`
   border-radius: 0;
   flex-direction: row;
-  font-family: ${Fonts.SOURCE_SERIF_PRO};
+  /* font-family: ${Fonts.SOURCE_SERIF_PRO}; */
   font-size: 1.5rem;
   height: unset;
   justify-content: space-between;
@@ -55,7 +55,7 @@ export const DetailsTextWrapper = styled.div<any>`
   border-top: 0.5rem solid ${Colors.WHITE_87};
   display: flex;
   flex-direction: column;
-  font-family: ${Fonts.SOURCE_SERIF_PRO};
+  /* font-family: ${Fonts.SOURCE_SERIF_PRO}; */
   font-size: 1rem;
   justify-content: flex-start;
   line-height: 2.5rem;
@@ -73,7 +73,7 @@ export const DetailsTextHighlightWrapper = styled(DetailsTextWrapper)`
   background-color: transparent;
   border: none 0 transparent;
   color: ${Colors.TURQUOISE};
-  font-family: ${Fonts.BARLOW};
+  /* font-family: ${Fonts.BARLOW}; */
   font-size: 1.5rem;
   padding: 0.5rem 2rem 2rem 0;
 `;

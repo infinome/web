@@ -24,7 +24,8 @@ export const Colors = {
 export const Fonts = {
   BARLOW: `Barlow, sans-serif;`,
   BARLOW_CONDENSED: `Barlow Condensed, sans-serif;`,
-  SOURCE_SERIF_PRO: `Source Serif Pro, serif;`
+  SOURCE_SERIF_PRO: `Source Serif Pro, serif;`,
+  INTER: `Inter, sans-serif`
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -32,10 +33,11 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: ${Colors.WHITE};
-    font-family: ${Fonts.SOURCE_SERIF_PRO};
+    font-family: ${Fonts.INTER};
     font-size: 16px;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
   }
 `;

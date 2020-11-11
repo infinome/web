@@ -13,7 +13,8 @@ export const ContentFooter = styled.div`
   padding: 1rem 2.5rem;
 `;
 
-const FooterLogoLink = styled(Link)`
+// const FooterLogoLink = styled(Link)`
+const FooterLogoLink = styled("div")`
   margin-left: 1rem;
 `;
 
@@ -21,7 +22,8 @@ export const Footer: FC = () => {
   return (
     <ContentFooter>
       &copy; 2020 Infinome Biosciences
-      <FooterLogoLink to="/" title="Infinome Home">
+      {/* <FooterLogoLink to="/" title="Infinome Home"> */}
+      <FooterLogoLink title="Infinome Home">
         <InfinomeLogoIcon />
       </FooterLogoLink>
     </ContentFooter>

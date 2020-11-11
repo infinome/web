@@ -8,7 +8,8 @@ export interface IBreadcrumb {
   breadcrumbTrail?: ILinkElement[];
 }
 
-const BreadcrumbLink = styled(Link)`
+// const BreadcrumbLink = styled(Link)`
+const BreadcrumbLink = styled("div")`
   color: #8f9899;
   text-decoration: none;
   font-family: ${Fonts.BARLOW_CONDENSED};
@@ -46,7 +47,8 @@ const renderBreadcrumbs = (breadcrumbTrail?: ILinkElement[]) => (
       return (
         <Fragment key={index}>
           {path ? (
-            <BreadcrumbLink to={path}>{label}</BreadcrumbLink>
+            // <BreadcrumbLink to={path}>{label}</BreadcrumbLink>
+            <BreadcrumbLink title={path}>{label}</BreadcrumbLink>
           ) : (
             <BreadcrumbNoLink>{label}</BreadcrumbNoLink>
           )}
