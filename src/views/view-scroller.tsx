@@ -14,7 +14,7 @@ import { ScrollHeader } from "../components/layout/header";
 import { NewsContent } from "./news";
 import { TeamContent } from "./team";
 import { HomeContent } from "./home";
-// import { Routes } from "../config/definitions";
+import { SCROLL_DELAY_MS } from "../config/definitions";
 import { getPercentVisible } from "element-visible-percentage";
 
 import {
@@ -31,13 +31,13 @@ const ScrollableView = styled.div<{
 }>`
   background-color: ${({ bgColor }) => bgColor || `transparent`};
   min-height: 93vh;
-  padding: 2rem 2rem;
+  padding: 2rem 3rem;
   padding-top: ${({ label }) =>
     4 + (label === "Home" ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM)}rem;
   transform: translateX(${({ show }) => (show ? "0" : "-50vw")});
   opacity: ${({ show }) => (show ? 1 : 0.25)};
   transition: transform 0.3s, opacity 0.25s;
-  width: 100%;
+  // width: 100%;
 `;
 
 const emptyDOORect: DOMRect = {
@@ -157,7 +157,7 @@ export const ViewScroller = () => {
     // console.log("handleWindowScroll - window.scrollY", window.scrollY);
   };
 
-  useScrollPosition(handleWindowScroll, 200);
+  useScrollPosition(handleWindowScroll, SCROLL_DELAY_MS);
 
   const scrollToView = (viewId: string) => {
     let viewRef;

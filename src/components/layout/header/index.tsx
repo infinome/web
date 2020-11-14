@@ -30,28 +30,32 @@ const ScrollHeaderWrapperOuter = styled(HeaderWrapperOuter)`
   top: 0;
   width: 100%;
   z-index: 17;
-  transition: height 0.3s;
-  height: ${(props) =>
-    props.isHome ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM}rem;
+  transition: height 0.3s background-color 0.3s;
+  /* height: ${(props) =>
+    props.isHome ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM}rem; */
   background-color: ${Colors.WHITE_87};
+  color: ${Colors.WHITE};
+  padding-bottom: 0.5rem solid ${Colors.WHITE_87};
 `;
 
 const HeaderWrapper = styled.div<IHomePageAware>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: ${Colors.WHITE_87}; */
+  background-color: ${Colors.INFINOME_CHARCOAL_97};
+  /* background-color: ${(props) =>
+    props.isHome ? Colors.INFINOME_CHARCOAL : Colors.INFINOME_CHARCOAL_97}; */
   background-repeat: no-repeat;
   padding: ${({ isHome }) => (isHome ? "0.75rem 0 0 2rem" : "0.5rem 0 0 2rem")};
   transition: height 1s;
   height: ${({ isHome }) =>
     isHome ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM}rem;
   margin: 0; //0.25rem;
-  /* border-top: 0.25rem solid ${Colors.TITLE_BLUE}; */
+  border-bottom: 0.25rem solid ${Colors.INFINOME_CHARCOAL};
 `;
 
 const LogoWrapper = styled.div<IHomePageAware>`
-  font-size: ${({ isHome }) => (isHome ? "3rem" : "2.25rem")};
+  font-size: ${({ isHome }) => (isHome ? "3.5rem" : "2.5rem")};
   transition: font-size 0.5s;
 `;
 

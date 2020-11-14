@@ -6,15 +6,17 @@ import { createGlobalStyle } from "styled-components";
  */
 export const Colors = {
   BLACK_BLUE: "#101F27",
-  PALE_GREEN: "rgba(190, 204, 184, 1)",
   BLUE: "#14219C",
+  DARK_BLUE: "rgba(3, 33, 39, 1)",
+  INFINOME_CHARCOAL: "rgba(32,35,38,1)",
+  INFINOME_CHARCOAL_97: "rgba(32,35,38,0.97)",
+  INFINOME_RED: "rgba(153,1,2,1)",
+  PALE_GREEN: "rgba(190, 204, 184, 1)",
+  TITLE_BLUE: "rgba(23, 3, 87, 1)",
   TURQUOISE: "rgba(0, 126, 154, 1)",
   TURQUOISE_67: "rgba(0, 126, 154, 0.67)",
-  DARK_BLUE: "rgba(3, 33, 39, 1)",
-  TITLE_BLUE: "rgba(23, 3, 87, 1)",
   WHITE: "rgba(255,255,255,1)",
-  WHITE_87: "rgba(255,255,255,0.87)",
-  INFINOME_RED: "rgba(153,1,2,1)"
+  WHITE_87: "rgba(255,255,255,0.87)"
 };
 
 /**
@@ -42,5 +44,5 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const HEADER_HEIGHT_REM: number = 2.5;
-export const HEADER_HOME_HEIGHT_REM: number = 3.75;
+export const HEADER_HEIGHT_REM: number = 3;
+export const HEADER_HOME_HEIGHT_REM: number = 4.25;

@@ -1,7 +1,15 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 import {
+  Colors,
+  HEADER_HEIGHT_REM,
+  HEADER_HOME_HEIGHT_REM
+} from "../config/styles";
+import islandMountains from "../assets/images/infinome-island-mountains.png";
+
+import {
   DetailsTextHighlightWrapper,
+  DetailsTextWrapperRow,
   DetailsTextWrapper,
   ViewContainer
 } from "../components/layout";
@@ -25,23 +33,48 @@ const BgOverlayContainer2 = styled(BgOverlayContainer)`
   border-right: 100vw solid rgba(171, 176, 126, 0.21);
 `;
 
+const HomeViewText = styled.div`
+  width: 45%;
+  padding-right: 3rem;
+  text-shadow: 0 0.05rem 0 ${Colors.WHITE_87};
+`;
+
+const HomeDetailsTextHighlightWrapper = styled(DetailsTextHighlightWrapper)`
+  text-shadow: 0.05rem 0.05rem 0 ${Colors.WHITE_87};
+`;
+
+const HomeViewImageSpacer = styled.div`
+  background: transparent;
+  width: 55%;
+  height: 30rem;
+`;
+
+const HomeViewContainer = styled(ViewContainer)`
+  background: url(${islandMountains});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 200%;
+`;
+
 export const HomeContent: FC = () => {
   return (
     <>
       {/* <BgOverlayContainer />
       <BgOverlayContainer2 /> */}
       {/* <View contentTitle="&nbsp;"> */}
-      <ViewContainer>
-        <DetailsTextWrapper>
-          <p>{"Harnessing the infinite potential of the genome"}</p>
-          <p>
+      <HomeViewContainer>
+        <HomeDetailsTextHighlightWrapper>
+          {"Harnessing the infinite potential of the genome"}
+        </HomeDetailsTextHighlightWrapper>
+        <DetailsTextWrapperRow>
+          <HomeViewText>
             {
-              "Infinome Biosciences leverages state-of-the-art technologies including high-throughput CRISPR-based genome editing, machine learning/AI, directed evolution, smart automation & analytics, and lean integrated teams to usher in a new era of the bioeconomy and uniquely deliver high-value biological products to the market.            "
+              "Infinome Biosciences leverages state-of-the-art technologies including high-throughput CRISPR-based genome editing, machine learning/AI, directed evolution, smart automation & analytics, and lean integrated teams to usher in a new era of the bioeconomy and uniquely deliver high-value biological products to the market."
             }
-          </p>
-          <p>&nbsp;</p>
-        </DetailsTextWrapper>
-      </ViewContainer>
+          </HomeViewText>
+          <HomeViewImageSpacer />
+        </DetailsTextWrapperRow>
+      </HomeViewContainer>
       {/* </View> */}
     </>
   );

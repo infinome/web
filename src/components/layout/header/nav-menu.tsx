@@ -36,12 +36,13 @@ const NavMenuWrapper = styled.div<IHomePageAware>`
   flex-direction: row;
   transition: padding 0.3s;
   padding: ${(props) =>
-    props.isHome !== false ? "1.45rem 1rem 0 0" : "1rem 1rem 0 0"};
+    props.isHome !== false ? "2rem 1rem 0 0" : "1.25rem 1rem 0 0"};
   z-index: 1;
 `;
 
 // const NavMenuLink = styled(Link)`
 const NavMenuLink = styled.div<IHomePageAware>`
+  cursor: pointer;
   text-decoration: none;
   user-select: none;
   color: ${Colors.TURQUOISE};
@@ -50,7 +51,7 @@ const NavMenuLink = styled.div<IHomePageAware>`
   font-size: ${({ isHome }) => (isHome !== false ? "1.5rem" : "1.25rem")};
   text-transform: uppercase;
   :hover {
-    color: ${Colors.DARK_BLUE};
+    color: ${Colors.WHITE};
   }
 `;
 
@@ -65,10 +66,10 @@ interface IRenderNavMenuProps {
   handleMenuToggle(): void;
 }
 
-const NavMenuItemDivider = styled("div")`
-  padding: 0 0.25rem;
+const NavMenuItemDivider = styled.div<IHomePageAware>`
+  padding: 0.25rem 0.25rem;
   color: ${Colors.PALE_GREEN};
-  font-size: 1.5rem;
+  font-size: ${({ isHome }) => (isHome ? "1.25rem" : "0.75rem")};
 `;
 
 export const NavMenu: FC<INavMenu> = ({

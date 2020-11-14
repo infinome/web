@@ -71,6 +71,7 @@ export const BackgroundColumnLeft = styled.div`
 export const LogoLink = styled("div")`
   width: fit-content;
   z-index: 17;
+  cursor: pointer;
 `;
 
 export const ViewContainer = styled.div`

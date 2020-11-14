@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+export const SCROLL_DELAY_MS: number = 100;
+
 export interface IContent extends IHomePageAware {
   contentTitle?: string | ReactNode;
   children?: ReactNode;
