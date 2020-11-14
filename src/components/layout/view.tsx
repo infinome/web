@@ -33,6 +33,7 @@ export const ScrollableViewContainer = styled.div<IAnimatable>`
 export const ScrollableView: FC<IView> = ({
   breadcrumbTrail,
   contentTitle,
+  navigationHandler,
   sectionTitle,
   children
 }) => {
@@ -46,6 +47,7 @@ export const ScrollableView: FC<IView> = ({
         breadcrumbTrail={breadcrumbTrail}
         isHome={isHomePage}
         sectionTitle={sectionTitle}
+        navigationHandler={navigationHandler}
       />
       <Content contentTitle={contentTitle} isHome={isHomePage}>
         {children}
@@ -58,6 +60,7 @@ export const ScrollableView: FC<IView> = ({
 export const View: FC<IView> = ({
   breadcrumbTrail,
   contentTitle,
+  navigationHandler,
   sectionTitle,
   children
 }) => {
@@ -72,6 +75,7 @@ export const View: FC<IView> = ({
         breadcrumbTrail={breadcrumbTrail}
         isHome={isHomePage}
         sectionTitle={sectionTitle}
+        navigationHandler={navigationHandler}
       />
       <Content contentTitle={contentTitle} isHome={isHomePage}>
         {children}
@@ -84,6 +88,7 @@ export const View: FC<IView> = ({
 export const PanelView: FC<IPanelView> = ({
   breadcrumbTrail,
   isHome,
+  navigationHandler,
   panels,
   sectionTitle
 }) => {
@@ -94,7 +99,11 @@ export const PanelView: FC<IPanelView> = ({
   return (
     <AppComponent>
       {/* <BackgroundColumnLeft /> */}
-      <Header breadcrumbTrail={breadcrumbTrail} sectionTitle={sectionTitle} />
+      <Header
+        breadcrumbTrail={breadcrumbTrail}
+        sectionTitle={sectionTitle}
+        navigationHandler={navigationHandler}
+      />
       <ContentWrapper panelCount={panels.length}>
         {panels.map((panel: IContentPanel, index) => (
           <ContentPanel

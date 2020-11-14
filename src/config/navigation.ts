@@ -6,7 +6,11 @@ export const NAVIGATION_ELEMENTS: ILinkElement[] = [
   { label: "Contact", path: Routes.CONTACT }
 ];
 
-export interface INavMenu extends IHomePageAware {
+export interface INavigation {
+  navigationHandler?(viewId: string): void;
+}
+
+export interface INavMenu extends IHomePageAware, INavigation {
   navMenuItems?: ILinkElement[];
   currentTitle?: string;
 }

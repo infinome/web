@@ -1,15 +1,16 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import {
-  homeScrollPositionState,
-  newsScrollPositionState,
-  teamScrollPositionState,
-  contactScrollPositionState
+  selectedViewState
+  // homeScrollPositionState,
+  // newsScrollPositionState,
+  // teamScrollPositionState,
+  // contactScrollPositionState
 } from "../config/recoil-state";
 import { ContactContent } from "./contact";
-import { ScrollHeader, IHeader } from "../components/layout/header";
+import { ScrollHeader } from "../components/layout/header";
 import { NewsContent } from "./news";
 import { TeamContent } from "./team";
 import { HomeContent } from "./home";
@@ -21,30 +22,48 @@ import {
   ScrollEffectCallback,
   useScrollPosition
 } from "../hooks/use-scroll-position";
+import { HEADER_HOME_HEIGHT_REM, HEADER_HEIGHT_REM } from "../config/styles";
 
-// const ViewScrollerContainer = styled.div`
-//   margin: 0;
-//   overflow-x: hidden;
-//   overflow-y: auto;
-//   width: 100%;
-//   height: 100%;
-// `;
-
-const ScrollableView = styled.div<{ show: boolean; bgColor?: string }>`
-  /* height: 100vh; */
-  min-height: 87vh;
-  width: 100%;
-  transform: translateX(${({ show }) => (show ? "0" : "-100vw")});
-  transition: transform 1s;
+const ScrollableView = styled.div<{
+  show: boolean;
+  label: string;
+  bgColor?: string;
+}>`
   background-color: ${({ bgColor }) => bgColor || `transparent`};
-  padding: 2rem 0;
+  min-height: 93vh;
+  padding: 2rem 2rem;
+  padding-top: ${({ label }) =>
+    4 + (label === "Home" ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM)}rem;
+  transform: translateX(${({ show }) => (show ? "0" : "-50vw")});
+  opacity: ${({ show }) => (show ? 1 : 0.25)};
+  transition: transform 0.3s, opacity 0.25s;
+  width: 100%;
 `;
 
+const emptyDOORect: DOMRect = {
+  height: 0,
+  width: 0,
+  x: 0,
+  y: 0,
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  toJSON: () => ""
+};
+
+const getRefClientRect = (el: Element | null): DOMRect => {
+  if (!el) {
+    return emptyDOORect;
+  }
+  return !el ? emptyDOORect : el.getBoundingClientRect();
+};
+
 const getScrollPosition = (el: Element | null): number => {
-  if (el === null) {
+  if (!el) {
     return 0;
   }
-  return el === null ? 0 : el.getBoundingClientRect().top;
+  return !el ? 0 : getRefClientRect(el).top;
 };
 
 const isElementInViewport = (el: Element | null, threshold: number = 0.17) => {
@@ -52,8 +71,6 @@ const isElementInViewport = (el: Element | null, threshold: number = 0.17) => {
 };
 
 export const ViewScroller = () => {
-  // const { CONTACT, NEWS, TEAM, HOME, DEFAULT } = Routes;
-
   const [isHome, setIsHome] = useState(true);
 
   const [visibleViews, setVisibleViews] = useState({
@@ -63,31 +80,53 @@ export const ViewScroller = () => {
     showContact: false
   });
 
-  const homeViewRef = useRef(null);
-  const newsViewRef = useRef(null);
-  const contactViewRef = useRef(null);
-  const teamViewRef = useRef(null);
+  const homeViewRef = useRef<HTMLDivElement>(null);
+  const newsViewRef = useRef<HTMLDivElement>(null);
+  const contactViewRef = useRef<HTMLDivElement>(null);
+  const teamViewRef = useRef<HTMLDivElement>(null);
 
-  const [homeScrollPosition, setHomeScrollPosition] = useRecoilState(
-    homeScrollPositionState
-  );
-  const [newsScrollPosition, setNewsScrollPosition] = useRecoilState(
-    newsScrollPositionState
-  );
-  const [teamScrollPosition, setTeamScrollPosition] = useRecoilState(
-    teamScrollPositionState
-  );
-  const [contactScrollPosition, setContactScrollPosition] = useRecoilState(
-    contactScrollPositionState
-  );
+  // const [homeScrollPosition, setHomeScrollPosition] = useRecoilState(
+  //   homeScrollPositionState
+  // );
+  // const [newsScrollPosition, setNewsScrollPosition] = useRecoilState(
+  //   newsScrollPositionState
+  // );
+  // const [teamScrollPosition, setTeamScrollPosition] = useRecoilState(
+  //   teamScrollPositionState
+  // );
+  // const [contactScrollPosition, setContactScrollPosition] = useRecoilState(
+  //   contactScrollPositionState
+  // );
 
   // Update section scroll positions.
-  useLayoutEffect(() => {
-    setHomeScrollPosition(0);
-    setNewsScrollPosition(getScrollPosition(newsViewRef.current));
-    setTeamScrollPosition(getScrollPosition(teamViewRef.current));
-    setContactScrollPosition(getScrollPosition(contactViewRef.current));
-  }, []);
+  // useLayoutEffect(() => {
+  // const scrollage = getRefClientRect(viewScrollerRef.current);
+  // const hoem = getRefClientRect(homeViewRef.current);
+  // const neus = getRefClientRect(newsViewRef.current);
+  // const taem = getRefClientRect(teamViewRef.current);
+  // const cont = getRefClientRect(contactViewRef.current);
+  // console.log(`useLayoutEffect:\n
+  // - scrolleur: ${scrollage.top}, ${scrollage.height}\n
+  // - home: ${hoem.top}, ${hoem.height}\n
+  // - news: ${neus.top}, ${neus.height}\n
+  // - taem: ${taem.top}, ${taem.height}\n
+  // - cont: ${cont.top}, ${cont.height}\n
+  //  `);
+
+  // setHomeScrollPosition(getScrollPosition(homeViewRef.current));
+  // setNewsScrollPosition(getScrollPosition(newsViewRef.current));
+  // setTeamScrollPosition(getScrollPosition(teamViewRef.current));
+  // setContactScrollPosition(getScrollPosition(contactViewRef.current));
+  // }, [
+  //   homeViewRef,
+  //   setHomeScrollPosition,
+  //   newsViewRef,
+  //   setNewsScrollPosition,
+  //   teamViewRef,
+  //   setTeamScrollPosition,
+  //   contactViewRef,
+  //   setContactScrollPosition
+  // ]);
 
   // const topPos = (element: HTMLElement | null) => {
   //   // console.log("element", element?.tagName);
@@ -96,16 +135,6 @@ export const ViewScroller = () => {
   //   }
   //   return element.getBoundingClientRect().bottom;
   // };
-
-  // //added to reduce redundancy
-  // const homeViewPos = topPos(homeViewRef.current);
-  // console.log("homeViewPos", homeViewPos);
-  // const newsViewPos = topPos(newsViewRef.current);
-  // console.log("newsViewPos", newsViewPos);
-  // const teamViewPos = topPos(teamViewRef.current);
-  // console.log("teamViewPos", teamViewPos);
-  // const contactViewPos = topPos(contactViewRef.current);
-  // console.log("contactViewPos", contactViewPos);
 
   const handleWindowScroll: ScrollEffectCallback = ({
     previousPosition,
@@ -124,47 +153,85 @@ export const ViewScroller = () => {
     };
     // console.log(newState);
     setVisibleViews((state) => ({ ...newState }));
+
+    // console.log("handleWindowScroll - window.scrollY", window.scrollY);
   };
 
-  useScrollPosition(handleWindowScroll, 100);
+  useScrollPosition(handleWindowScroll, 200);
+
+  const scrollToView = (viewId: string) => {
+    let viewRef;
+    switch (viewId) {
+      case "Home":
+        viewRef = homeViewRef;
+        break;
+      case "News":
+        viewRef = newsViewRef;
+        break;
+      case "Team":
+        viewRef = teamViewRef;
+        break;
+      case "Contact":
+        viewRef = contactViewRef;
+        break;
+      default:
+    }
+    if (viewRef?.current) {
+      viewRef.current.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <>
       <ScrollHeader
+        navigationHandler={scrollToView}
         // breadcrumbTrail={breadcrumbTrail}
         isHome={isHome}
         // sectionTitle={sectionTitle}
       />
+      {/* <div>
+        <span onClick={testTeamScroll}>Scroll to TEAM</span>
+        <span onClick={testNewsScroll}>Scroll to NEWS</span>
+      </div> */}
       {/* <HomeView />
       <NewsView />
       <TeamView />
       <ContactView /> */}
-      <ScrollableView show={visibleViews.showHome} ref={homeViewRef}>
-        Hoem
+      <ScrollableView
+        show={visibleViews.showHome}
+        ref={homeViewRef}
+        key="home"
+        label="Home"
+      >
         <HomeContent />
       </ScrollableView>
       <ScrollableView
+        key="news"
+        label="News"
         show={visibleViews.showNews}
         ref={newsViewRef}
-        bgColor={"blue"}
+        // bgColor={"blue"}
       >
-        Neus
         <NewsContent />
       </ScrollableView>
       <ScrollableView
+        key="team"
+        label="Team"
         show={visibleViews.showTeam}
         ref={teamViewRef}
-        bgColor={"lightblue"}
+        // bgColor={"lightblue"}
       >
-        Teaem
         <TeamContent />
       </ScrollableView>
       <ScrollableView
+        key="contact"
+        label="Contact"
         show={visibleViews.showContact}
         ref={contactViewRef}
-        bgColor={"lightgreen"}
+        // bgColor={"lightgreen"}
       >
-        Contax
         <ContactContent />
       </ScrollableView>
       {/* <NewsView />

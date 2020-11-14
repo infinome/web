@@ -41,3 +41,6 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 `;
+
+export const HEADER_HEIGHT_REM: number = 2.5;
+export const HEADER_HOME_HEIGHT_REM: number = 3.75;

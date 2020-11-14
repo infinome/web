@@ -5,10 +5,18 @@ import { Breadcrumb, IBreadcrumb } from "./breadcrumb";
 import { InfinomeLogo } from "../../infinome-logo";
 import { NavMenu } from "./nav-menu";
 import { LogoLink } from "../";
-import { Colors } from "../../../config/styles";
+import {
+  Colors,
+  HEADER_HEIGHT_REM,
+  HEADER_HOME_HEIGHT_REM
+} from "../../../config/styles";
 import { IHomePageAware } from "../../../config/definitions";
 
-export interface IHeader extends IBreadcrumb, IHomePageAware {
+import { useRecoilValue } from "recoil";
+import { selectedViewState } from "../../../config/recoil-state";
+import { INavMenu } from "../../../config/navigation";
+
+export interface IHeader extends IBreadcrumb, IHomePageAware, INavMenu {
   sectionTitle?: string;
 }
 
@@ -23,7 +31,8 @@ const ScrollHeaderWrapperOuter = styled(HeaderWrapperOuter)`
   width: 100%;
   z-index: 17;
   transition: height 0.3s;
-  height: ${(props) => (props.isHome ? "3.75rem" : "2.5rem")};
+  height: ${(props) =>
+    props.isHome ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM}rem;
   background-color: ${Colors.WHITE_87};
 `;
 
@@ -35,7 +44,8 @@ const HeaderWrapper = styled.div<IHomePageAware>`
   background-repeat: no-repeat;
   padding: ${({ isHome }) => (isHome ? "0.75rem 0 0 2rem" : "0.5rem 0 0 2rem")};
   transition: height 1s;
-  height: ${({ isHome }) => (isHome ? "3.75rem" : "2.5rem")};
+  height: ${({ isHome }) =>
+    isHome ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM}rem;
   margin: 0; //0.25rem;
   /* border-top: 0.25rem solid ${Colors.TITLE_BLUE}; */
 `;
@@ -48,6 +58,7 @@ const LogoWrapper = styled.div<IHomePageAware>`
 export const Header: FC<IHeader> = ({
   breadcrumbTrail,
   isHome,
+  navigationHandler,
   sectionTitle
 }) => {
   return (
@@ -57,7 +68,11 @@ export const Header: FC<IHeader> = ({
         <LogoLink title="Infinome Home">
           <InfinomeLogo isHome={isHome} />
         </LogoLink>
-        <NavMenu isHome={isHome} currentTitle={sectionTitle} />
+        <NavMenu
+          isHome={isHome}
+          currentTitle={sectionTitle}
+          navigationHandler={navigationHandler}
+        />
       </HeaderWrapper>
     </HeaderWrapperOuter>
   );
@@ -66,17 +81,34 @@ export const Header: FC<IHeader> = ({
 export const ScrollHeader: FC<IHeader> = ({
   breadcrumbTrail,
   isHome,
+  navigationHandler,
   sectionTitle
 }) => {
+  // const homeScrollPosition = useRecoilValue(homeScrollPositionState);
+
+  const handleHomeClick = () => {
+    if (navigationHandler) {
+      navigationHandler("Home");
+    }
+  };
+
+  // const handleNavClick = (section?: string) => () => {
+  //   navigationHandler(section);
+  // };
+
   return (
     <ScrollHeaderWrapperOuter isHome={isHome}>
       <HeaderWrapper isHome={isHome}>
         {/* <LogoLink to="/" title="Infinome Home"> */}
-        <LogoLink title="Infinome Home">
+        <LogoLink title="Infinome Home" onClick={handleHomeClick}>
           <LogoWrapper isHome={isHome}>{"Infinome Biosciences"}</LogoWrapper>
           {/* <InfinomeLogo isHome={isHome} /> */}
         </LogoLink>
-        <NavMenu isHome={isHome} currentTitle={sectionTitle} />
+        <NavMenu
+          isHome={isHome}
+          currentTitle={sectionTitle}
+          navigationHandler={navigationHandler}
+        />
       </HeaderWrapper>
     </ScrollHeaderWrapperOuter>
   );

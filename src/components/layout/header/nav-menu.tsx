@@ -1,12 +1,12 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import {
-  homeScrollPositionState,
-  newsScrollPositionState,
-  teamScrollPositionState,
-  contactScrollPositionState
+  selectedViewState
+  // newsScrollPositionState,
+  // teamScrollPositionState,
+  // contactScrollPositionState
 } from "../../../config/recoil-state";
 import { ILinkElement, IHomePageAware } from "../../../config/definitions";
 import { Colors, Fonts } from "../../../config/styles";
@@ -74,42 +74,54 @@ const NavMenuItemDivider = styled("div")`
 export const NavMenu: FC<INavMenu> = ({
   navMenuItems = [],
   currentTitle,
+  navigationHandler,
   isHome
 }) => {
   const [section, setSection] = useState("home");
 
-  // useEffect(() => {
-  //   window.scrollTo(0,300)
-  // }, [section]);
+  // const handleNavClick((viewId) => {
+  //   navigationHandler(viewId);
+  // };
 
-  const newsScrollPosition = useRecoilValue(newsScrollPositionState);
-  const teamScrollPosition = useRecoilValue(teamScrollPositionState);
-  const contactScrollPosition = useRecoilValue(contactScrollPositionState);
+  // const newsScrollPosition = useRecoilValue(newsScrollPositionState);
+  // const teamScrollPosition = useRecoilValue(teamScrollPositionState);
+  // const contactScrollPosition = useRecoilValue(contactScrollPositionState);
 
-  const handleNavClick = (section: string) => () => {
-    // window.scrollTo(0, 300);
-    switch (section) {
-      case "News":
-        window.scroll(0, newsScrollPosition);
-        break;
-      case "Team":
-        window.scroll(0, teamScrollPosition);
-        break;
-      case "Contact":
-        window.scroll(0, contactScrollPosition);
-        break;
-      default:
+  const handleNavClick = (viewId: string) => () => {
+    if (navigationHandler) {
+      navigationHandler(viewId);
     }
   };
+  // const handleNavClick = (section: string) => () => {
+  //   const poop = document.getElementById("poop");
+  //   // window.scrollTo(0, 300);
+  //   switch (section) {
+  //     case "News":
+  //       console.log("news - strollin' to ", newsScrollPosition);
+  //       poop?.scrollTo(0, newsScrollPosition);
+  //       // window.scrollTo(0, newsScrollPosition);
+  //       break;
+  //     case "Team":
+  //       console.log("team - strollin' to ", teamScrollPosition);
+  //       // window.scrollTo(0, teamScrollPosition);
+  //       poop?.scrollTo(0, teamScrollPosition);
+  //       break;
+  //     case "Contact":
+  //       console.log("contact - strollin' to ", contactScrollPosition);
+  //       // window.scrollTo(0, contactScrollPosition);
+  //       poop?.scrollTo(0, contactScrollPosition);
+  //       break;
+  //     default:
+  //   }
+  // };
 
   return (
     <NavMenuWrapper isHome={isHome}>
       {(navMenuItems || []).map(({ label, path }, index) => {
         return (
-          <>
+          <Fragment key={index}>
             {/* <NavMenuLink to={path} key={index} title={label}> */}
             <NavMenuLink
-              key={index}
               title={label}
               isHome={isHome}
               onClick={handleNavClick(label)}
@@ -119,7 +131,7 @@ export const NavMenu: FC<INavMenu> = ({
             {index !== navMenuItems.length - 1 && (
               <NavMenuItemDivider>|</NavMenuItemDivider>
             )}
-          </>
+          </Fragment>
         );
       })}
       {/* <NavTitleWrapper onClick={handleMenuToggle}>
