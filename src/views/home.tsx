@@ -29,7 +29,7 @@ const HomeViewContainer = styled(ViewContainer)`
   background: url(${islandMountains});
   background-size: contain;
   background-repeat: no-repeat;
-  background-position-x: 200%;
+  background-position-x: 125%;
 `;
 
 export const HomeContent: FC = () => {
