@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { BulletIcon } from "../components/bullet-con";
+// import { BulletIcon } from "../components/bullet-con";
 import { Colors, Fonts } from "../config/styles";
 import BioPhotoRichard from "../assets/images/Team-Richard.png";
 import BioPhotoMike from "../assets/images/Team-Mike.png";
@@ -9,7 +9,7 @@ import BioPhotoDan from "../assets/images/Team-Dan.png";
 import LinkedInLogo from "../assets/images/Team-linkedin-icon.png";
 import {
   DetailsTextHighlightWrapper,
-  DetailsTextWrapperRow,
+  // DetailsTextWrapperRow,
   ViewContainer
 } from "../components/layout";
 

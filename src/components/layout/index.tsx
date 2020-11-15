@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Colors } from "../../config/styles";
 import mountains from "../../assets/images/boulder-mountains.png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export { PanelView, ScrollableViewContainer, View } from "./view";
 export {

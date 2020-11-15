@@ -1,10 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors, Fonts } from "../config/styles";
 import {
   DetailsTextHighlightWrapper,
   DetailsTextWrapper,
-  DetailsTextWrapperRow,
+  // DetailsTextWrapperRow,
   ViewContainer
 } from "../components/layout";
 

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { Breadcrumb, IBreadcrumb } from "./breadcrumb";
+import { IBreadcrumb } from "./breadcrumb";
 // import { BurnminuteLogoTitle } from "./logo-title";
 import { InfinomeLogo } from "../../infinome-logo";
 import { NavMenu } from "./nav-menu";
@@ -12,8 +12,8 @@ import {
 } from "../../../config/styles";
 import { IHomePageAware } from "../../../config/definitions";
 
-import { useRecoilValue } from "recoil";
-import { selectedViewState } from "../../../config/recoil-state";
+// import { useRecoilValue } from "recoil";
+// import { selectedViewState } from "../../../config/recoil-state";
 import { INavMenu } from "../../../config/navigation";
 
 export interface IHeader extends IBreadcrumb, IHomePageAware, INavMenu {
@@ -43,8 +43,6 @@ const HeaderWrapper = styled.div<IHomePageAware>`
   flex-direction: row;
   justify-content: space-between;
   background-color: ${Colors.INFINOME_CHARCOAL_97};
-  /* background-color: ${(props) =>
-    props.isHome ? Colors.INFINOME_CHARCOAL : Colors.INFINOME_CHARCOAL_97}; */
   background-repeat: no-repeat;
   padding: ${({ isHome }) => (isHome ? "0.75rem 0 0 2rem" : "0.5rem 0 0 2rem")};
   transition: height 1s;
@@ -60,7 +58,6 @@ const LogoWrapper = styled.div<IHomePageAware>`
 `;
 
 export const Header: FC<IHeader> = ({
-  breadcrumbTrail,
   isHome,
   navigationHandler,
   sectionTitle
@@ -68,7 +65,6 @@ export const Header: FC<IHeader> = ({
   return (
     <HeaderWrapperOuter>
       <HeaderWrapper isHome={isHome}>
-        {/* <LogoLink to="/" title="Infinome Home"> */}
         <LogoLink title="Infinome Home">
           <InfinomeLogo isHome={isHome} />
         </LogoLink>
@@ -83,27 +79,19 @@ export const Header: FC<IHeader> = ({
 };
 
 export const ScrollHeader: FC<IHeader> = ({
-  breadcrumbTrail,
   isHome,
   navigationHandler,
   sectionTitle
 }) => {
-  // const homeScrollPosition = useRecoilValue(homeScrollPositionState);
-
   const handleHomeClick = () => {
     if (navigationHandler) {
       navigationHandler("Home");
     }
   };
 
-  // const handleNavClick = (section?: string) => () => {
-  //   navigationHandler(section);
-  // };
-
   return (
     <ScrollHeaderWrapperOuter isHome={isHome}>
       <HeaderWrapper isHome={isHome}>
-        {/* <LogoLink to="/" title="Infinome Home"> */}
         <LogoLink title="Infinome Home" onClick={handleHomeClick}>
           <LogoWrapper isHome={isHome}>{"Infinome Biosciences"}</LogoWrapper>
           {/* <InfinomeLogo isHome={isHome} /> */}

@@ -1,37 +1,13 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import {
-  Colors,
-  HEADER_HEIGHT_REM,
-  HEADER_HOME_HEIGHT_REM
-} from "../config/styles";
+import { Colors } from "../config/styles";
 import islandMountains from "../assets/images/infinome-island-mountains.png";
 
 import {
   DetailsTextHighlightWrapper,
   DetailsTextWrapperRow,
-  DetailsTextWrapper,
   ViewContainer
 } from "../components/layout";
-import { BackgroundAngleOverlay } from "../components/background-angle-overlay";
-
-const BgOverlayContainer = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 7vw;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-top: 100vh solid transparent;
-  border-bottom: 100vh solid transparent;
-  border-right: 100vw solid rgba(80, 172, 115, 0.23);
-`;
-
-const BgOverlayContainer2 = styled(BgOverlayContainer)`
-  left: 3vw;
-  border-right: 100vw solid rgba(171, 176, 126, 0.21);
-`;
 
 const HomeViewText = styled.div`
   width: 45%;

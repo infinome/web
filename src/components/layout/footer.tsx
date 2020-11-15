@@ -1,7 +1,7 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Colors, Fonts } from "../../config//styles";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { InfinomeLogoIcon } from "../infinome-logo-icon";
 
 export const ContentFooter = styled.div`

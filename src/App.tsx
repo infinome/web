@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { BackgroundImageComponent } from "./components/layout";
+import React from "react";
+// import { BackgroundImageComponent } from "./components/layout";
 // import {
 //   ElementPositions,
 //   useScrollPosition
 // } from "./hooks/use-scroll-position";
 // import { ViewRouter } from "./views/view-router";
 import { ViewScroller } from "./views/view-scroller";
-import { getPercentVisible } from "element-visible-percentage";
+// import { getPercentVisible } from "element-visible-percentage";
 import { GlobalStyle } from "./config/styles";
-import { ScrollHeader, IHeader } from "./components/layout/header";
+// import { ScrollHeader, IHeader } from "./components/layout/header";
 
 function App() {
-  const [hideOnScroll, setHideOnScroll] = useState(true);
+  // const [hideOnScroll, setHideOnScroll] = useState(true);
 
   // useScrollPosition(
   //   ({ previousPosition, currentPosition }: ElementPositions) => {

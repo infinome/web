@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import { AppComponent, BackgroundColumnLeft } from "./";
+import { AppComponent } from "./";
 import { Header, IHeader } from "./header";
 import { Footer } from "./footer";
 import { IBreadcrumb } from "./header/breadcrumb";
@@ -64,13 +64,9 @@ export const View: FC<IView> = ({
   sectionTitle,
   children
 }) => {
-  // const { pathname } = useLocation();
-
-  // const isHomePage = pathname === Routes.HOME;
   const isHomePage = true;
   return (
     <AppComponent>
-      {/* <BackgroundColumnLeft /> */}
       <Header
         breadcrumbTrail={breadcrumbTrail}
         isHome={isHomePage}
@@ -92,13 +88,8 @@ export const PanelView: FC<IPanelView> = ({
   panels,
   sectionTitle
 }) => {
-  const { pathname } = useLocation();
-
-  const isHomePage = pathname === Routes.HOME;
-
   return (
     <AppComponent>
-      {/* <BackgroundColumnLeft /> */}
       <Header
         breadcrumbTrail={breadcrumbTrail}
         sectionTitle={sectionTitle}

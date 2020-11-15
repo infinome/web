@@ -1,6 +1,6 @@
-import React, { FC, ReactNode } from "react";
+// import React from "react";
 import styled from "styled-components";
-import { CenteredContentWrapper } from "../layout/";
+// import { CenteredContentWrapper } from "../layout/";
 import { Colors, Fonts } from "../../config/styles";
 
 // export const DetailsContentWrapper = styled(CenteredContentWrapper)`

@@ -1,14 +1,14 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import {
-  selectedViewState
-  // homeScrollPositionState,
-  // newsScrollPositionState,
-  // teamScrollPositionState,
-  // contactScrollPositionState
-} from "../config/recoil-state";
+// import { useRecoilState } from "recoil";
+// import {
+//   selectedViewState
+//   // homeScrollPositionState,
+//   // newsScrollPositionState,
+//   // teamScrollPositionState,
+//   // contactScrollPositionState
+// } from "../config/recoil-state";
 import { ContactContent } from "./contact";
 import { ScrollHeader } from "../components/layout/header";
 import { NewsContent } from "./news";
@@ -39,32 +39,6 @@ const ScrollableView = styled.div<{
   transition: transform 0.3s, opacity 0.25s;
   // width: 100%;
 `;
-
-const emptyDOORect: DOMRect = {
-  height: 0,
-  width: 0,
-  x: 0,
-  y: 0,
-  top: 0,
-  right: 0,
-  bottom: 0,
-  left: 0,
-  toJSON: () => ""
-};
-
-const getRefClientRect = (el: Element | null): DOMRect => {
-  if (!el) {
-    return emptyDOORect;
-  }
-  return !el ? emptyDOORect : el.getBoundingClientRect();
-};
-
-const getScrollPosition = (el: Element | null): number => {
-  if (!el) {
-    return 0;
-  }
-  return !el ? 0 : getRefClientRect(el).top;
-};
 
 const isElementInViewport = (el: Element | null, threshold: number = 0.17) => {
   return getPercentVisible(el) >= threshold;
