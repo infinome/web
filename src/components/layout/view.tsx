@@ -42,7 +42,6 @@ export const ScrollableView: FC<IView> = ({
   const isHomePage = pathname === Routes.HOME;
   return (
     <ScrollableViewContainer>
-      {/* <BackgroundColumnLeft /> */}
       <Header
         breadcrumbTrail={breadcrumbTrail}
         isHome={isHomePage}

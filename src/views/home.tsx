@@ -35,9 +35,6 @@ const HomeViewContainer = styled(ViewContainer)`
 export const HomeContent: FC = () => {
   return (
     <>
-      {/* <BgOverlayContainer />
-      <BgOverlayContainer2 /> */}
-      {/* <View contentTitle="&nbsp;"> */}
       <HomeViewContainer>
         <HomeDetailsTextHighlightWrapper>
           {"Harnessing the infinite potential of the genome"}
@@ -51,7 +48,6 @@ export const HomeContent: FC = () => {
           <HomeViewImageSpacer />
         </DetailsTextWrapperRow>
       </HomeViewContainer>
-      {/* </View> */}
     </>
   );
 };

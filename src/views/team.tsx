@@ -105,7 +105,6 @@ const TeamSubTitleVision = styled.div`
 
 export const TeamContent: FC = () => {
   return (
-    // <View contentTitle="Founding Team">
     <ViewContainer>
       <DetailsTextHighlightWrapper>
         {"Our Executive team brings a wealth of industry experience"}

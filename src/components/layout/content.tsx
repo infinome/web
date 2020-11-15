@@ -6,8 +6,6 @@ import {
   IHomePageAware
 } from "../../config//definitions";
 import { Colors, Fonts } from "../../config//styles";
-// import { Link } from "react-router-dom";
-// import { InfinomeLogoIcon } from "../infinome-logo-icon";
 
 export interface IContentWrapperProps {
   panelCount?: number;

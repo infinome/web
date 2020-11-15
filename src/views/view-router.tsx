@@ -8,7 +8,6 @@ import { Routes } from "../config/definitions";
 
 export const ContentRouter = () => {
   const { CONTACT, NEWS, TEAM, HOME, DEFAULT } = Routes;
-  // const { CONTACT, NEWS, TEAM } = Routes;
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>

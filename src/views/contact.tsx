@@ -27,7 +27,6 @@ const ContactLabel = styled.div`
 
 export const ContactContent: FC = () => {
   return (
-    // <View contentTitle="Contact Us">
     <ViewContainer>
       <DetailsTextHighlightWrapper>
         {"Please reach out for more information"}

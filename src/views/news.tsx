@@ -39,7 +39,6 @@ const NewsLink = styled.a`
 
 export const NewsContent: FC = () => {
   return (
-    // <View contentTitle="News and Media">
     <ViewContainer>
       <DetailsTextHighlightWrapper>
         {"Talks and presentations by members of our Founding Team"}

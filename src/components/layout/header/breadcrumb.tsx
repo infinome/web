@@ -47,7 +47,6 @@ const renderBreadcrumbs = (breadcrumbTrail?: ILinkElement[]) => (
       return (
         <Fragment key={index}>
           {path ? (
-            // <BreadcrumbLink to={path}>{label}</BreadcrumbLink>
             <BreadcrumbLink title={path}>{label}</BreadcrumbLink>
           ) : (
             <BreadcrumbNoLink>{label}</BreadcrumbNoLink>
