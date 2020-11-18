@@ -52,7 +52,7 @@ const ScrollableViewHome = styled(ScrollableView)`
       ? `background: url(${bgImage});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: 200%;
+  background-position-y: 300%;
   `
       : ``}
 `;

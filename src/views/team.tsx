@@ -112,7 +112,7 @@ export const TeamContent: FC = () => {
   return (
     <ViewContainer>
       <DetailsTextHighlightWrapper>
-        {"Our Executive team brings a wealth of industry experience"}
+        {"Our Executive Team brings a wealth of industry experience"}
       </DetailsTextHighlightWrapper>
 
       <TeammateContent>

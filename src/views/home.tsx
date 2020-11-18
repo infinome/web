@@ -25,7 +25,7 @@ const HomeTitleText = styled.div`
 const HomeDetailsTextHighlightWrapper = styled(DetailsTextHighlightWrapper)`
   color: ${Colors.WHITE};
   /* text-shadow: 0.05rem 0.05rem 0 ${Colors.WHITE_87}; */
-  height: 83vh;
+  height: 93vh;
   display: flex;
   flex-direction: row;
   align-items: center;
