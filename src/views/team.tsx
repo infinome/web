@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 // import { BulletIcon } from "../components/bullet-con";
-import { Colors, Fonts } from "../config/styles";
+import { Colors, Fonts, getFontSize } from "../config/styles";
 import BioPhotoRichard from "../assets/images/Team-Richard.png";
 import BioPhotoMike from "../assets/images/Team-Mike.png";
 import BioPhotoAndrew from "../assets/images/Team-Andrew.png";
@@ -27,6 +27,8 @@ const TeamImage = styled.img`
   border: none;
   width: 14rem;
   height: 14rem;
+  clip-path: circle(6rem at 7rem 7rem);
+  background-color: ${Colors.WHITE_87};
 `;
 
 const TeamLinkedinImage = styled.img`
@@ -41,7 +43,7 @@ const TeamLinkedinImage = styled.img`
 `;
 
 const TeammateContent = styled.div`
-  border-top: 0.5rem solid ${Colors.WHITE_87};
+  border-top: 0.5rem solid ${Colors.INFINOME_CHARCOAL_97};
   display: flex;
   flex-direction: row;
   flex-grow: 5;
@@ -60,20 +62,22 @@ const TeamList = styled.ul`
   list-style-type: square;
   padding: 0 1rem 1 rem 1 rem;
   width: 100%;
+  color: ${Colors.WHITE};
 `;
 
 const TeamListItem = styled.li`
   padding-left: 0.5rem;
   /* font-family: ${Fonts.SOURCE_SERIF_PRO}; */
-  font-size: 1rem;
+  font-size: ${getFontSize()};
 `;
 
 const TeamTitle = styled.div`
   background-color: transparent;
   border: none 0 transparent;
-  color: ${Colors.BLACK_BLUE};
+  /* color: ${Colors.BLACK_BLUE}; */
+  color: ${Colors.WHITE};
   /* font-family: ${Fonts.BARLOW_CONDENSED}; */
-  font-size: 1.5rem;
+  font-size: ${getFontSize(1.5)};
   font-weight: bold;
   padding: 0.75rem 0 0.5rem 0;
 `;
@@ -81,8 +85,9 @@ const TeamTitle = styled.div`
 const TeamSubTitle = styled(TeamTitle)`
   font-weight: normal;
   /* font-family: ${Fonts.BARLOW}; */
-  color: ${Colors.DARK_BLUE};
-  font-size: 1.25rem;
+  /* color: ${Colors.DARK_BLUE}; */
+  color: ${Colors.WHITE_87};
+  font-size: ${getFontSize(1.25)};
   padding-left: 1rem;
 `;
 
@@ -93,8 +98,8 @@ const BlueText = styled.div`
 `;
 
 const TeamSubTitleVision = styled.div`
-  background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 91.22%),
-    linear-gradient(0deg, #e7f0f7, #e7f0f7);
+  /* background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 91.22%), */
+  background: linear-gradient(0deg, #e7f0f7, #e7f0f7);
   border: none 0 transparent;
   color: ${Colors.BLACK_BLUE};
   /* font-family: ${Fonts.BARLOW_CONDENSED}; */

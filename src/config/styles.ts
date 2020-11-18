@@ -5,6 +5,7 @@ import { createGlobalStyle } from "styled-components";
  * @enum {string}
  */
 export const Colors = {
+  BLACK: "#000000",
   BLACK_BLUE: "#101F27",
   BLUE: "#14219C",
   DARK_BLUE: "rgba(3, 33, 39, 1)",
@@ -34,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${Colors.WHITE};
+    background-color: ${Colors.INFINOME_CHARCOAL_97};
     font-family: ${Fonts.INTER};
     font-size: 16px;
     margin: 0;
@@ -46,3 +47,10 @@ export const GlobalStyle = createGlobalStyle`
 
 export const HEADER_HEIGHT_REM: number = 3;
 export const HEADER_HOME_HEIGHT_REM: number = 4.25;
+
+export const FONT_SIZE_DEFAULT = 1.4;
+export const UNITS = "rem";
+
+// TODO: device-specific font sizes
+export const getFontSize = (ratio: number = 1): string =>
+  `${ratio * FONT_SIZE_DEFAULT + UNITS}`;

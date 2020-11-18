@@ -5,8 +5,20 @@ import {
   DetailsTextHighlightWrapper,
   DetailsTextWrapper,
   // DetailsTextWrapperRow,
-  ViewContainer
+  ViewContainer,
+  Footer
 } from "../components/layout";
+
+const ContactViewContainer = styled(ViewContainer)`
+  display: flex;
+  flex-direction: column;
+`;
+const ContactDetailsTextHighlightWrapper = styled(DetailsTextHighlightWrapper)`
+  flex-grow: 1;
+`;
+const ContactDetailsTextWrapper = styled(DetailsTextWrapper)`
+  flex-grow: 1;
+`;
 
 const ContactLink = styled.a`
   border: none;
@@ -27,16 +39,17 @@ const ContactLabel = styled.div`
 
 export const ContactContent: FC = () => {
   return (
-    <ViewContainer>
-      <DetailsTextHighlightWrapper>
+    <ContactViewContainer>
+      <ContactDetailsTextHighlightWrapper>
         {"Please reach out for more information"}
-      </DetailsTextHighlightWrapper>
-      <DetailsTextWrapper>
+      </ContactDetailsTextHighlightWrapper>
+      <ContactDetailsTextWrapper>
         <ContactLabel>{"Email: "}</ContactLabel>
         <ContactLink href="mailto:info@infinomebio.com?Subject=Infinome Website Contact">
           info@infinomebio.com
         </ContactLink>
-      </DetailsTextWrapper>
-    </ViewContainer>
+      </ContactDetailsTextWrapper>
+      <Footer />
+    </ContactViewContainer>
   );
 };

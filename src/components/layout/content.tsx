@@ -7,6 +7,8 @@ import {
 } from "../../config//definitions";
 import { Colors, Fonts } from "../../config//styles";
 
+export { Footer } from "./footer";
+
 export interface IContentWrapperProps {
   panelCount?: number;
 }

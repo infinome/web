@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { BulletIcon } from "../components/bullet-con";
+// import { BulletIcon } from "../components/bullet-con";
 import { Colors } from "../config/styles";
 import {
   DetailsTextHighlightWrapper,
@@ -44,7 +44,6 @@ export const NewsContent: FC = () => {
         {"Talks and presentations by members of our Founding Team"}
       </DetailsTextHighlightWrapper>
       <DetailsTextWrapperRow>
-        <BulletIcon />
         <NewsLink
           href="https://www.youtube.com/watch?v=5dauF7JhHiY"
           title="Rapid Forward Engineering at the Genome Scale, SEED 2019"
@@ -55,7 +54,6 @@ export const NewsContent: FC = () => {
         Rapid Forward Engineering at the Genome Scale, SEED 2019
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
-        <BulletIcon />
         <NewsLink
           href="https://www.youtube.com/watch?v=M-2bL9Tb1r4"
           title="SynBioBeta Webinar: Precision editing for genome scale directed evolution"
@@ -67,7 +65,6 @@ export const NewsContent: FC = () => {
         evolution (video)
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
-        <BulletIcon />
         <NewsLink
           href="https://www.youtube.com/watch?v=9QLaQ8Vt2F8"
           title="Rapid Genome Scale Engineering by Richard Fox, Inscripta"
@@ -78,7 +75,6 @@ export const NewsContent: FC = () => {
         Rapid Genome Scale Engineering by Richard Fox, Inscripta (video)
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
-        <BulletIcon />
         <NewsLink
           href="https://www.youtube.com/watch?v=n6GDGuVuFAw"
           title="Genome Scale Mapping of Genotype to Phenotype Relationships by Richard Fox, Inscripta"
@@ -90,7 +86,6 @@ export const NewsContent: FC = () => {
         Fox, Inscripta (video)
       </DetailsTextWrapperRow>
       <DetailsTextWrapperRow>
-        <BulletIcon />
         <NewsLink
           href="https://youtu.be/Aoxif1-s5uk"
           title="A benchtop platform for massively parallel CRISPR-based microbial genome engineering"

@@ -22,7 +22,7 @@ export interface IHeader extends IBreadcrumb, IHomePageAware, INavMenu {
 
 const HeaderWrapperOuter = styled.div<IHomePageAware>`
   /* background-color: rgba(255, 255, 255, 0.37); */
-  padding: 0 0 0.74rem 0;
+  /* padding: 0 0 0.74rem 0; */
 `;
 
 const ScrollHeaderWrapperOuter = styled(HeaderWrapperOuter)`
@@ -33,23 +33,24 @@ const ScrollHeaderWrapperOuter = styled(HeaderWrapperOuter)`
   transition: height 0.3s background-color 0.3s;
   /* height: ${(props) =>
     props.isHome ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM}rem; */
-  background-color: ${Colors.WHITE_87};
+  /* background-color: ${Colors.WHITE_87}; */
   color: ${Colors.WHITE};
-  padding-bottom: 0.5rem solid ${Colors.WHITE_87};
+  /* padding-bottom: 0.5rem solid ${Colors.WHITE_87}; */
+  /* padding-bottom: 0.5rem; */
 `;
 
 const HeaderWrapper = styled.div<IHomePageAware>`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: ${Colors.INFINOME_CHARCOAL_97};
-  background-repeat: no-repeat;
+  background: linear-gradient(89.94deg, #202326 8.56%, rgba(0, 0, 0, 0) 93.6%),
+    ${Colors.INFINOME_CHARCOAL_97};
   padding: ${({ isHome }) => (isHome ? "0.75rem 0 0 2rem" : "0.5rem 0 0 2rem")};
-  transition: height 1s;
+  transition: height 0.5s;
   height: ${({ isHome }) =>
     isHome ? HEADER_HOME_HEIGHT_REM : HEADER_HEIGHT_REM}rem;
-  margin: 0; //0.25rem;
-  border-bottom: 0.25rem solid ${Colors.INFINOME_CHARCOAL};
+  margin: 0;
+  border-bottom: 0.175rem solid ${Colors.BLACK};
 `;
 
 const LogoWrapper = styled.div<IHomePageAware>`

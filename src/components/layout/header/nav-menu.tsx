@@ -20,8 +20,9 @@ const NavMenuLink = styled.div<IHomePageAware>`
   user-select: none;
   color: ${Colors.TURQUOISE};
   transition: font-size 0.3s;
-  font-size: ${({ isHome }) => (isHome !== false ? "1.5rem" : "1.25rem")};
+  font-size: ${({ isHome }) => (isHome !== false ? "1.675rem" : "1.25rem")};
   text-transform: uppercase;
+  text-shadow: 0 0.05rem 0 ${Colors.BLACK};
   :hover {
     color: ${Colors.WHITE};
   }

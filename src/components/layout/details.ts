@@ -1,7 +1,7 @@
 // import React from "react";
 import styled from "styled-components";
 // import { CenteredContentWrapper } from "../layout/";
-import { Colors, Fonts } from "../../config/styles";
+import { Colors, Fonts, getFontSize } from "../../config/styles";
 
 // export const DetailsContentWrapper = styled(CenteredContentWrapper)`
 export const DetailsContentWrapper = styled("div")`
@@ -52,11 +52,11 @@ export const DetailsBodyWrapper = styled(DetailsContentWrapper)`
 
 export const DetailsTextWrapper = styled.div<any>`
   background-color: rgba(254, 253, 255, 0.67);
-  border-top: 0.5rem solid ${Colors.WHITE_87};
+  /* border-top: 0.5rem solid ${Colors.WHITE_87}; */
   display: flex;
   flex-direction: column;
   /* font-family: ${Fonts.SOURCE_SERIF_PRO}; */
-  font-size: 1rem;
+  font-size: ${getFontSize()};
   justify-content: flex-start;
   line-height: 2.5rem;
   padding: 0.5rem 4rem;
@@ -66,7 +66,7 @@ export const DetailsTextWrapper = styled.div<any>`
 export const DetailsTextWrapperRow = styled(DetailsTextWrapper)`
   background-color: rgba(254, 253, 255, 0.47);
   flex-direction: row;
-  margin: 0 0 3rem 0;
+  /* margin: 0 0 3rem 0; */
 `;
 
 export const DetailsTextHighlightWrapper = styled(DetailsTextWrapper)`
@@ -74,6 +74,6 @@ export const DetailsTextHighlightWrapper = styled(DetailsTextWrapper)`
   border: none 0 transparent;
   color: ${Colors.TURQUOISE};
   /* font-family: ${Fonts.BARLOW}; */
-  font-size: 1.5rem;
+  font-size: ${getFontSize(1.75)};
   padding: 0.5rem 2rem 2rem 0;
 `;

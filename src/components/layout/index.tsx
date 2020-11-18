@@ -6,6 +6,7 @@ export { PanelView, ScrollableViewContainer, View } from "./view";
 export {
   CenteredContentWrapper,
   Content,
+  Footer,
   ContentPanel,
   ContentTitle
 } from "./content";
