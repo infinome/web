@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import mountains from "../../assets/images/boulder-mountains.png";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Colors } from "../../config/styles";
 
 export { PanelView, ScrollableViewContainer, View } from "./view";
 export {
@@ -67,11 +68,13 @@ export const BackgroundColumnLeft = styled.div`
   border-radius: 1rem 0px 0px 1rem;
 `;
 
-// export const LogoLink = styled(Link)`
-export const LogoLink = styled("div")`
+// export const LogoLink = styled("div")`
+export const LogoLink = styled(Link)`
   width: fit-content;
   z-index: 17;
   cursor: pointer;
+  text-decoration: none;
+  color: ${Colors.WHITE};
 `;
 
 export const ViewContainer = styled.div`

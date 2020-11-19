@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { IBreadcrumb } from "./breadcrumb";
-// import { BurnminuteLogoTitle } from "./logo-title";
 import { InfinomeLogo } from "../../infinome-logo";
 import { NavMenu } from "./nav-menu";
 import { LogoLink } from "../";
@@ -66,7 +66,7 @@ export const Header: FC<IHeader> = ({
   return (
     <HeaderWrapperOuter>
       <HeaderWrapper isHome={isHome}>
-        <LogoLink title="Infinome Home">
+        <LogoLink title="Infinome Home" to="">
           <InfinomeLogo isHome={isHome} />
         </LogoLink>
         <NavMenu
@@ -93,7 +93,7 @@ export const ScrollHeader: FC<IHeader> = ({
   return (
     <ScrollHeaderWrapperOuter isHome={isHome}>
       <HeaderWrapper isHome={isHome}>
-        <LogoLink title="Infinome Home" onClick={handleHomeClick}>
+        <LogoLink to="" title="Infinome Home" onClick={handleHomeClick}>
           <LogoWrapper isHome={isHome}>{"Infinome Biosciences"}</LogoWrapper>
           {/* <InfinomeLogo isHome={isHome} /> */}
         </LogoLink>

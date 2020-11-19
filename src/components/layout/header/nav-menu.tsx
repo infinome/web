@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ILinkElement, IHomePageAware } from "../../../config/definitions";
 import { Colors } from "../../../config/styles";
 import { INavMenu, NAVIGATION_ELEMENTS } from "../../../config/navigation";
+import { Link } from "react-router-dom";
 
 const NavMenuWrapper = styled.div<IHomePageAware>`
   display: flex;
@@ -14,7 +15,8 @@ const NavMenuWrapper = styled.div<IHomePageAware>`
 `;
 
 // const NavMenuLink = styled(Link)`
-const NavMenuLink = styled.div<IHomePageAware>`
+// const NavMenuLink = styled.div<IHomePageAware>`
+const NavMenuLink = styled(Link)<IHomePageAware>`
   cursor: pointer;
   text-decoration: none;
   user-select: none;
@@ -52,9 +54,9 @@ export const NavMenu: FC<INavMenu> = ({
   isHome
 }) => {
   const handleNavClick = (viewId: string) => () => {
-    if (navigationHandler) {
-      navigationHandler(viewId);
-    }
+    // if (navigationHandler) {
+    //   navigationHandler(viewId);
+    // }
   };
 
   return (
@@ -62,11 +64,12 @@ export const NavMenu: FC<INavMenu> = ({
       {(navMenuItems || []).map(({ label, path }, index) => {
         return (
           <Fragment key={index}>
-            {/* <NavMenuLink to={path} key={index} title={label}> */}
             <NavMenuLink
-              title={label}
               isHome={isHome}
+              key={index}
               onClick={handleNavClick(label)}
+              title={label}
+              to={path}
             >
               <NavMenuItem>{label}</NavMenuItem>
             </NavMenuLink>

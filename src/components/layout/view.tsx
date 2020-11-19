@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { AppComponent } from "./";
 import { Header, IHeader } from "./header";
 import { Footer } from "./footer";
@@ -9,8 +9,8 @@ import { Content, ContentPanel, ContentWrapper } from "./content";
 import {
   IContent,
   IContentPanel,
-  IHomePageAware,
-  Routes
+  IHomePageAware
+  // Routes
 } from "../../config//definitions";
 
 export interface IView extends IHeader, IBreadcrumb, IContent, IHomePageAware {}
@@ -30,31 +30,31 @@ export const ScrollableViewContainer = styled.div<IAnimatable>`
   background-color: orange;
 `;
 
-export const ScrollableView: FC<IView> = ({
-  breadcrumbTrail,
-  contentTitle,
-  navigationHandler,
-  sectionTitle,
-  children
-}) => {
-  const { pathname } = useLocation();
+// export const ScrollableView: FC<IView> = ({
+//   breadcrumbTrail,
+//   contentTitle,
+//   navigationHandler,
+//   sectionTitle,
+//   children
+// }) => {
+//   const { pathname } = useLocation();
 
-  const isHomePage = pathname === Routes.HOME;
-  return (
-    <ScrollableViewContainer>
-      <Header
-        breadcrumbTrail={breadcrumbTrail}
-        isHome={isHomePage}
-        sectionTitle={sectionTitle}
-        navigationHandler={navigationHandler}
-      />
-      <Content contentTitle={contentTitle} isHome={isHomePage}>
-        {children}
-      </Content>
-      <Footer />
-    </ScrollableViewContainer>
-  );
-};
+//   const isHomePage = pathname === Routes.HOME;
+//   return (
+//     <ScrollableViewContainer>
+//       <Header
+//         breadcrumbTrail={breadcrumbTrail}
+//         isHome={isHomePage}
+//         sectionTitle={sectionTitle}
+//         navigationHandler={navigationHandler}
+//       />
+//       <Content contentTitle={contentTitle} isHome={isHomePage}>
+//         {children}
+//       </Content>
+//       <Footer />
+//     </ScrollableViewContainer>
+//   );
+// };
 
 export const View: FC<IView> = ({
   breadcrumbTrail,

@@ -1,13 +1,15 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { ContactContent } from "./contact";
 import { ScrollHeader } from "../components/layout/header";
 import { NewsContent } from "./news";
 import { TeamContent } from "./team";
 import { HomeContent } from "./home";
-import { SCROLL_DELAY_MS } from "../config/definitions";
+import { SCROLL_DELAY_MS, Routes } from "../config/definitions";
 import { getPercentVisible } from "element-visible-percentage";
 import islandMountains from "../assets/images/infinome-island-mountains.png";
+
+import { useParams } from "react-router-dom";
 
 import {
   ElementPositions,
@@ -57,11 +59,24 @@ const ScrollableViewHome = styled(ScrollableView)`
       : ``}
 `;
 
+interface IRouterParams {
+  ["0"]?: string;
+}
+
 const isElementInViewport = (el: Element | null, threshold: number = 0.17) => {
   return getPercentVisible(el) >= threshold;
 };
 
+const isSelectedByURI = (viewID: string, currentViewID: string) => {
+  return viewID.toLocaleLowerCase() === currentViewID.toLocaleLowerCase();
+};
+
 export const ViewScroller = () => {
+  const params = useParams<IRouterParams>();
+  const currentViewId = params["0"] || "";
+
+  // console.log("params", JSON.stringify(params, null, 2));
+  // console.log("viewId", currentViewId);
   const [isHome, setIsHome] = useState(true);
 
   const [visibleViews, setVisibleViews] = useState({
@@ -69,6 +84,10 @@ export const ViewScroller = () => {
     showNews: false,
     showTeam: false,
     showContact: false
+    // showHome: isSelectedByURI(``, currentViewId),
+    // showNews: isSelectedByURI(`news`, currentViewId),
+    // showTeam: isSelectedByURI(`team`, currentViewId),
+    // showContact: isSelectedByURI(`contact`, currentViewId)
   });
 
   const homeViewRef = useRef<HTMLDivElement>(null);
@@ -97,18 +116,19 @@ export const ViewScroller = () => {
   useScrollPosition(handleWindowScroll, SCROLL_DELAY_MS);
 
   const scrollToView = (viewId: string) => {
+    let viewIdLowerCase = viewId.toLocaleLowerCase();
     let viewRef;
-    switch (viewId) {
-      case "Home":
+    switch (viewIdLowerCase) {
+      case "home":
         viewRef = homeViewRef;
         break;
-      case "News":
+      case "news":
         viewRef = newsViewRef;
         break;
-      case "Team":
+      case "team":
         viewRef = teamViewRef;
         break;
-      case "Contact":
+      case "contact":
         viewRef = contactViewRef;
         break;
       default:
@@ -119,6 +139,16 @@ export const ViewScroller = () => {
       });
     }
   };
+
+  // Navigatte to view on page load.
+
+  useEffect(() => {
+    // console.log("useEffect - currentViewId", currentViewId);
+    // console.log("newsViewRef", newsViewRef);
+    setTimeout(() => {
+      scrollToView(currentViewId);
+    }, 250);
+  }, [currentViewId]);
 
   return (
     <>
